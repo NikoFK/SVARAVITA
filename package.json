@@ -1,0 +1,18 @@
+{
+  "name": "svaravita",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "SVARAVITA — game edukasi literasi kesehatan berbasis web untuk penyandang tunanetra. Vanilla ES6+, tanpa framework, tanpa backend.",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^5.4.0"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

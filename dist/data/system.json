@@ -1,0 +1,88 @@
+{
+  "levelId": "system",
+  "bloomLevel": "N/A",
+  "displayTitle": "Scene Sistem (Opening/Logo/Tutorial/Menu)",
+  "scenes": [
+    {
+      "id": "opening",
+      "type": "opening",
+      "background": "opening",
+      "nextScene": "logo",
+      "lines": [
+        {
+          "id": "opening_L01",
+          "speaker": "narrator",
+          "text": "Selamat datang di SVARAVITA. Ketuk layar sekali untuk mulai.",
+          "audio": null,
+          "animation": null
+        }
+      ]
+    },
+    {
+      "id": "logo",
+      "type": "opening",
+      "background": "logo",
+      "nextScene": "tutorial",
+      "lines": [
+        {
+          "id": "logo_L01",
+          "speaker": "narrator",
+          "text": "SVARAVITA — Game Edukasi Literasi Kesehatan.",
+          "audio": null,
+          "animation": null
+        }
+      ]
+    },
+    {
+      "id": "tutorial",
+      "type": "tutorial",
+      "background": "tutorial",
+      "nextScene": "menu",
+      "lines": [
+        {
+          "id": "tutorial_L01",
+          "speaker": "narrator",
+          "text": "Ketuk satu kali layar untuk membacakan.",
+          "audio": null,
+          "animation": null
+        },
+        {
+          "id": "tutorial_L02",
+          "speaker": "narrator",
+          "text": "Ketuk dua kali untuk memilih.",
+          "audio": null,
+          "animation": null
+        },
+        {
+          "id": "tutorial_L03",
+          "speaker": "narrator",
+          "text": "Ketuk dua kali layar sebelah kiri untuk memilih A.",
+          "audio": null,
+          "animation": null
+        },
+        {
+          "id": "tutorial_L04",
+          "speaker": "narrator",
+          "text": "Ketuk dua kali layar sebelah kanan untuk memilih B.",
+          "audio": null,
+          "animation": null
+        }
+      ]
+    },
+    {
+      "id": "menu",
+      "type": "menu",
+      "background": "menu",
+      "nextScene": "level1_scn001",
+      "lines": [
+        {
+          "id": "menu_L01",
+          "speaker": "narrator",
+          "text": "Menu Utama. Pilih Mulai Baru atau Lanjutkan.",
+          "audio": null,
+          "animation": null
+        }
+      ]
+    }
+  ]
+}

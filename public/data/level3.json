@@ -1,0 +1,334 @@
+{
+  "levelId": "level3",
+  "bloomLevel": "C3",
+  "displayTitle": "Level 3 – Menerapkan",
+  "scenes": [
+    {
+      "id": "level3_scn001",
+      "type": "narration",
+      "background": "level3_scn001",
+      "nextScene": "level3_scn002",
+      "lines": [
+        {
+          "id": "level3_scn001_L01",
+          "speaker": "narrator",
+          "text": "Keesokan harinya… jam istirahat berbunyi. Vara dan Zea kembali ke kantin sekolah. Aroma gorengan dan makanan hangat langsung menyambut mereka.. Kali ini, Vara ingin mencoba memilih makanan dengan lebih bijak.",
+          "audio": null,
+          "animation": null
+        }
+      ]
+    },
+    {
+      "id": "level3_scn002",
+      "type": "dialogue",
+      "background": "level3_scn002",
+      "nextScene": "level3_scn003",
+      "lines": [
+        {
+          "id": "level3_scn002_L01",
+          "speaker": "vara",
+          "text": "Zea, hari ini aku mau coba pilih makanan yang lebih sehat… tapi aku masih bingung.",
+          "audio": null,
+          "animation": null
+        },
+        {
+          "id": "level3_scn002_L02",
+          "speaker": "zea",
+          "text": "Coba lihat pilihan di kantin. Tubuh kita butuh karbohidrat, protein, dan vitamin supaya tetap sehat.",
+          "audio": null,
+          "animation": null
+        },
+        {
+          "id": "level3_scn002_L03",
+          "speaker": "narrator",
+          "text": "Vara melihat pilihan makanan:\n* Nasi + ayam goreng + sayur\n* Mie instan + sosis\n* Gorengan saja",
+          "audio": null,
+          "animation": null
+        },
+        {
+          "id": "level3_scn002_L04",
+          "speaker": "vara",
+          "text": "Kalau aku pilih nasi, ayam, dan sayur… itu sudah lebih seimbang ya?",
+          "audio": null,
+          "animation": null
+        },
+        {
+          "id": "level3_scn002_L05",
+          "speaker": "zea",
+          "text": "Iya, karena ada karbohidrat dari nasi, protein dari ayam, dan vitamin dari sayur.",
+          "audio": null,
+          "animation": null
+        }
+      ]
+    },
+    {
+      "id": "level3_scn003",
+      "type": "dialogue",
+      "background": "level3_scn002",
+      "nextScene": "level3_scn004",
+      "lines": [
+        {
+          "id": "level3_scn003_L01",
+          "speaker": "vara",
+          "text": "Kalau minuman, aku biasanya pilih ini…",
+          "audio": null,
+          "animation": null
+        },
+        {
+          "id": "level3_scn003_L02",
+          "speaker": "zea",
+          "text": "Boleh sesekali, tapi kalau terlalu sering, kandungan gulanya tinggi.",
+          "audio": null,
+          "animation": null
+        },
+        {
+          "id": "level3_scn003_L03",
+          "speaker": "vara",
+          "text": "Berarti lebih baik aku pilih air putih atau jus tanpa gula ya?",
+          "audio": null,
+          "animation": null
+        },
+        {
+          "id": "level3_scn003_L04",
+          "speaker": "zea",
+          "text": "Betul! Itu pilihan yang lebih sehat.",
+          "audio": null,
+          "animation": null
+        }
+      ]
+    },
+    {
+      "id": "level3_scn004",
+      "type": "dialogue",
+      "background": "level3_scn002",
+      "nextScene": "level3_scn005",
+      "lines": [
+        {
+          "id": "level3_scn004_L01",
+          "speaker": "narrator",
+          "text": "Di sudut kantin, terlihat banyak snack kemasan.",
+          "audio": null,
+          "animation": null
+        },
+        {
+          "id": "level3_scn004_L02",
+          "speaker": "vara",
+          "text": "Aku sering banget jajan snack ini setiap hari…",
+          "audio": null,
+          "animation": null
+        },
+        {
+          "id": "level3_scn004_L03",
+          "speaker": "zea",
+          "text": "Itu termasuk makanan ultra proses. Biasanya tinggi gula, garam, dan lemak.",
+          "audio": null,
+          "animation": null
+        },
+        {
+          "id": "level3_scn004_L04",
+          "speaker": "vara",
+          "text": "Kalau dimakan terus-terusan, nggak baik ya?",
+          "audio": null,
+          "animation": null
+        },
+        {
+          "id": "level3_scn004_L05",
+          "speaker": "zea",
+          "text": "Iya. Lebih baik kamu kurangi dan ganti dengan makanan yang lebih alami.",
+          "audio": null,
+          "animation": null
+        },
+        {
+          "id": "level3_scn004_L06",
+          "speaker": "vara",
+          "text": "Kalau aku terus makan gorengan dan minuman manis, apa yang bisa terjadi?",
+          "audio": null,
+          "animation": null
+        },
+        {
+          "id": "level3_scn004_L07",
+          "speaker": "zea",
+          "text": "Bisa meningkatkan risiko penyakit tidak menular seperti obesitas, diabetes, dan hipertensi di masa depan.",
+          "audio": null,
+          "animation": null
+        },
+        {
+          "id": "level3_scn004_L08",
+          "speaker": "vara",
+          "text": "Wah, berarti dari sekarang aku harus mulai jaga pola makan ya…",
+          "audio": null,
+          "animation": null
+        },
+        {
+          "id": "level3_scn004_L09",
+          "speaker": "zea",
+          "text": "Iya, kamu bisa mulai dari hal sederhana.",
+          "audio": null,
+          "animation": null
+        },
+        {
+          "id": "level3_scn004_L10",
+          "speaker": "vara",
+          "text": "Seperti memilih menu yang lebih seimbang, mengurangi makanan ultra proses, dan memilih minuman yang lebih sehat?",
+          "audio": null,
+          "animation": null
+        },
+        {
+          "id": "level3_scn004_L11",
+          "speaker": "zea",
+          "text": "Tepat sekali! Itu langkah kecil tapi penting untuk kesehatan jangka panjang.",
+          "audio": null,
+          "animation": null
+        }
+      ]
+    },
+    {
+      "id": "level3_scn005",
+      "type": "narration",
+      "background": "level3_scn002",
+      "nextScene": "level3_scn006",
+      "lines": [
+        {
+          "id": "level3_scn005_L01",
+          "speaker": "narrator",
+          "text": "Vara mulai memahami cara memilih makanan yang lebih sehat…\ndari mengelompokkan zat gizi hingga menentukan menu seimbang…\nNamun perjalanan belum selesai…\nSekarang giliranmu membuktikan pemahamanmu…\nApakah kamu siap memilih yang terbaik untuk tubuhmu?\nYuk, selesaikan kuis berikut!",
+          "audio": null,
+          "animation": null
+        }
+      ]
+    },
+    {
+      "id": "level3_scn006",
+      "type": "quiz",
+      "background": "level3_scn002",
+      "nextScene": "level3_scn007",
+      "questions": [
+        {
+          "id": "level3_scn006_q01",
+          "questionText": "Vara ingin membuat menu sarapan yang dapat memberikan energi dan membantu pertumbuhan tubuh. Menu yang lebih tepat adalah….",
+          "questionAudio": null,
+          "choiceLeft": {
+            "text": "Nasi, telur, sayur, dan susu",
+            "audio": null
+          },
+          "choiceRight": {
+            "text": "Roti manis dan minuman bersoda",
+            "audio": null
+          },
+          "correctAnswer": "left",
+          "feedbackCorrect": {
+            "text": "Tepat! Menu itu lengkap dan bergizi seimbang.",
+            "audio": null
+          },
+          "feedbackWrong": {
+            "text": "Belum tepat. Roti manis dan soda kurang bergizi seimbang.",
+            "audio": null
+          }
+        },
+        {
+          "id": "level3_scn006_q02",
+          "questionText": "Saat makan siang di sekolah, Zea ingin memilih menu yang mengandung zat gizi lebih seimbang. Pilihan menu yang lebih sesuai adalah….",
+          "questionAudio": null,
+          "choiceLeft": {
+            "text": "Nasi, ikan, sayur, buah, dan air putih",
+            "audio": null
+          },
+          "choiceRight": {
+            "text": "Kentang goreng, ayam goreng, dan minuman bersoda",
+            "audio": null
+          },
+          "correctAnswer": "left",
+          "feedbackCorrect": {
+            "text": "Benar! Menu itu jauh lebih seimbang gizinya.",
+            "audio": null
+          },
+          "feedbackWrong": {
+            "text": "Belum tepat. Menu itu tinggi minyak, garam, dan gula.",
+            "audio": null
+          }
+        },
+        {
+          "id": "level3_scn006_q03",
+          "questionText": "Setelah makan, Vara ingin membeli minuman. Ia sedang berusaha mengurangi konsumsi gula, tetapi tetap ingin minuman yang segar. Pilihan manakah yang lebih baik untuk Vara?",
+          "questionAudio": null,
+          "choiceLeft": {
+            "text": "Teh manis dengan sedikit gula",
+            "audio": null
+          },
+          "choiceRight": {
+            "text": "Jus buah dengan gula tambahan",
+            "audio": null
+          },
+          "correctAnswer": "left",
+          "feedbackCorrect": {
+            "text": "Tepat! Kadar gulanya lebih rendah dibanding pilihan lain.",
+            "audio": null
+          },
+          "feedbackWrong": {
+            "text": "Belum tepat. Jus dengan gula tambahan justru kadar gulanya lebih tinggi.",
+            "audio": null
+          }
+        },
+        {
+          "id": "level3_scn006_q04",
+          "questionText": "Seorang teman Vara sering mengonsumsi makanan tinggi gula dan gorengan, tetapi mulai khawatir dengan kesehatannya. Ia ingin melakukan perubahan kecil yang realistis. Langkah mana yang lebih tepat dilakukan ?",
+          "questionAudio": null,
+          "choiceLeft": {
+            "text": "Mengurangi minuman manis dan mulai menambah konsumsi air putih",
+            "audio": null
+          },
+          "choiceRight": {
+            "text": "Langsung menghindari semua makanan berlemak secara drastis",
+            "audio": null
+          },
+          "correctAnswer": "left",
+          "feedbackCorrect": {
+            "text": "Benar! Perubahan bertahap lebih realistis dan berkelanjutan.",
+            "audio": null
+          },
+          "feedbackWrong": {
+            "text": "Belum tepat. Perubahan drastis sulit dipertahankan jangka panjang.",
+            "audio": null
+          }
+        },
+        {
+          "id": "level3_scn006_q05",
+          "questionText": "Rina ingin memilih camilan setelah berolahraga. Ia membandingkan dua pilihan berikut. Manakah yang lebih tepat dipilih?",
+          "questionAudio": null,
+          "choiceLeft": {
+            "text": "Yogurt rendah gula dan buah segar.",
+            "audio": null
+          },
+          "choiceRight": {
+            "text": "Roti manis dan minuman teh kemasan rendah gula.",
+            "audio": null
+          },
+          "correctAnswer": "left",
+          "feedbackCorrect": {
+            "text": "Tepat! Yogurt rendah gula dan buah segar lebih bergizi.",
+            "audio": null
+          },
+          "feedbackWrong": {
+            "text": "Belum tepat. Roti manis tetap mengandung gula cukup tinggi.",
+            "audio": null
+          }
+        }
+      ]
+    },
+    {
+      "id": "level3_scn007",
+      "type": "level_unlock",
+      "background": "level3_scn002",
+      "nextScene": "level4_scn001",
+      "lines": [
+        {
+          "id": "level3_scn007_L01",
+          "speaker": "narrator",
+          "text": "Kerja bagus! Vara semakin mahir menerapkan pilihan makanan sehat. Level 4 terbuka.",
+          "audio": null,
+          "animation": null
+        }
+      ]
+    }
+  ]
+}

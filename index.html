@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+  <meta name="description" content="SVARAVITA — Game edukasi literasi kesehatan untuk penyandang tunanetra." />
+  <title>SVARAVITA</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <div id="app">
+    <!-- Diisi/dikosongkan oleh UIManager lewat components/*.js. Jangan edit
+         struktur id di bawah ini tanpa menyesuaikan components/*.js. -->
+    <div id="scene-background"></div>
+
+    <div id="scene-subtitle-box">
+      <div id="scene-speaker-name"></div>
+      <div id="scene-subtitle-text"></div>
+    </div>
+
+<div id="quiz-choices"></div>
+    <div id="tutorial-overlay" style="display:none;"></div>
+    <div id="opening-overlay" style="display:none;"></div>
+    <div id="ending-overlay" style="display:none;"></div>
+    <div id="progress-info"></div>
+    <div id="hud">Vita Point: 0</div>
+
+    <!-- Gerbang wajib "tap-to-start": mengunlock AudioContext browser mobile
+         sebelum GameEngine mulai (lihat main.js). Setelah tap pertama,
+         elemen ini juga dipakai UIManager untuk overlay loading biasa. -->
+    <div id="loading-screen">
+      <p id="loading-screen-text">Ketuk layar untuk mulai</p>
+    </div>
+  </div>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>

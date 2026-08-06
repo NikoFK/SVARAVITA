@@ -1,0 +1,682 @@
+/* =============================================================================
+   style.css — SVARAVITA
+   Layout audio-first dengan aksesibilitas tunanetra.
+   - Visual hierarchy: HUD → Soal → Tombol A/B (mengalir natural)
+   - No dead space: flex/gap proporsional antar elemen
+   - Fully responsive (clamp/vh/vw)
+   ========================================================================== */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: #000;
+  font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
+  touch-action: manipulation;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+#app {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* ---------- Background ---------- */
+#scene-background {
+  position: absolute;
+  inset: 0;
+  background-color: #1a1a2e;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: background-image 0.3s ease-in-out;
+}
+
+/* ---------- Character portrait ---------- */
+#scene-portrait {
+  position: absolute;
+  left: 50%;
+  bottom: 22vh;
+  transform: translateX(-50%);
+  width: 40vw;
+  max-width: 260px;
+  height: 40vh;
+  max-height: 320px;
+  background-size: contain;
+  background-position: bottom center;
+  background-repeat: no-repeat;
+  visibility: hidden;
+}
+
+/* ============================================
+   Row 1 — TOP BAR (progress-info kiri, HUD kanan)
+   Posisi aman di atas, tidak bentrok dengan soal
+   ============================================ */
+#progress-info {
+  position: absolute;
+  top: clamp(8px, 1.5vh, 14px);
+  left: clamp(8px, 2vw, 16px);
+  padding: 0.8vh 1.8vw;
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.78), rgba(20, 20, 30, 0.88));
+  color: #ffffff;
+  border-radius: 14px;
+  border: 2px solid rgba(255, 215, 0, 0.25);
+  z-index: 20;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+  min-width: 100px;
+}
+
+.progress-level {
+  font-size: clamp(0.75rem, 1.8vw, 0.95rem);
+  font-weight: 700;
+  color: #FFD700;
+  letter-spacing: 0.5px;
+}
+
+.progress-stars {
+  display: flex;
+  gap: 1px;
+  align-items: center;
+}
+
+.star-icon {
+  display: block;
+  width: clamp(14px, 2.5vw, 20px);
+  height: clamp(14px, 2.5vw, 20px);
+}
+
+.star-icon.active {
+  filter: drop-shadow(0 0 4px rgba(255, 215, 0, 0.6));
+}
+
+.star-icon.inactive {
+  opacity: 0.5;
+}
+
+.progress-soal {
+  font-size: clamp(0.7rem, 1.6vw, 0.85rem);
+  font-weight: 600;
+  color: #a0aec0;
+  letter-spacing: 0.3px;
+}
+
+/* ---------- HUD (Vita Point) — pojok kanan atas ---------- */
+#hud {
+  position: absolute;
+  top: clamp(8px, 1.5vh, 14px);
+  right: clamp(8px, 2vw, 16px);
+  padding: 0.8vh 2vw;
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.78), rgba(20, 20, 30, 0.88));
+  color: #2dd4bf;                 /* mint/turquoise terang — kontras baik, bukan merah */
+  font-weight: 800;
+  font-size: clamp(0.8rem, 2vw, 1.1rem);
+  border-radius: 999px;
+  border: 2px solid rgba(45, 212, 191, 0.35);
+  z-index: 20;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+}
+
+/* ============================================
+   Row 2 — SOAL / SUBTITLE
+   Mulai di bawah TOP BAR, proporsional
+   ============================================ */
+#scene-subtitle-box {
+  position: absolute;
+  top: 9vh;                       /* JAUH di bawah progress-info */
+  left: 5%;
+  right: 5%;
+  width: 90%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 1.8vh 3.5vw;
+  background: linear-gradient(135deg, rgba(15, 23, 42, 0.94), rgba(30, 41, 59, 0.9));
+  border: 2px solid rgba(125, 211, 252, 0.25);
+  border-radius: 18px;
+  color: #ffffff;
+  z-index: 10;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  max-height: 22vh;               /* Cukup — tidak dominan */
+  overflow-y: auto;
+}
+
+#scene-speaker-name {
+  font-size: clamp(0.8rem, 1.8vw, 1rem);
+  font-weight: 700;
+  color: #7dd3fc;
+  margin-bottom: 4px;
+  min-height: 1.3em;
+  letter-spacing: 0.5px;
+}
+
+#scene-subtitle-text {
+  font-size: clamp(1rem, 2.8vw, 1.4rem);
+  line-height: 1.5;
+  font-weight: 500;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Scene cerita (story): kotak subtitle disembunyikan total — hanya gambar
+   fullscreen + audio narasi. Class ini di-toggle oleh UIManager. */
+#scene-subtitle-box.subtitle-hidden {
+  display: none;
+}
+
+/* ============================================
+   Row 3 — TOMBOL PILIHAN A / B
+   - Mengisi sisa ruang di bawah soal
+   - justify-content: center agar tidak dead space
+   ============================================ */
+#quiz-choices {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+}
+
+.choice-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;        /* Tengah — tidak nempel bawah */
+  pointer-events: none;           /* Parent mati — anak diaktifkan */
+}
+
+/* Kontainer tombol — ukuran proporsional mengisi sisa layar */
+.visual-buttons-container {
+  display: flex;
+  gap: clamp(8px, 2vw, 20px);
+  width: 90%;
+  max-width: 900px;
+  /* Mulai dari bawah subtitle-box (≈34vh), isi sampai bawah (≈62vh dari top) */
+  height: 52vh;
+  max-height: 480px;
+  margin-top: 36vh;               /* Dorong ke bawah — mulai setelah soal */
+  z-index: 110;
+  pointer-events: none;
+}
+
+.choice-btn {
+  flex: 1;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  pointer-events: auto;
+  cursor: pointer;
+  min-height: 100%;
+  background: linear-gradient(180deg, #FFD500 0%, #F39C12 100%);
+  border: 5px solid #FFFFFF;
+  border-radius: 24px;
+  padding: 1.5vh 1.5vw;
+  text-align: center;
+  color: #1a1a2e;
+  font-weight: 800;
+  font-size: clamp(1rem, 2.5vw, 1.3rem);
+  line-height: 1.4;
+  box-shadow:
+    0 12px 0 #D68910,
+    0 18px 28px rgba(0, 0, 0, 0.6),
+    0 0 30px rgba(255, 213, 0, 0.15);
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+  text-shadow: 0 1px 3px rgba(255, 255, 255, 0.3);
+}
+
+.choice-btn.active {
+  transform: translateY(12px);
+  box-shadow:
+    0 0 0 #D68910,
+    0 5px 12px rgba(0, 0, 0, 0.5),
+    0 0 20px rgba(255, 213, 0, 0.1);
+}
+
+.choice-btn:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    0 16px 0 #D68910,
+    0 22px 32px rgba(0, 0, 0, 0.6),
+    0 0 45px rgba(255, 213, 0, 0.25);
+}
+
+.choice-text {
+  font-size: clamp(1rem, 2.8vw, 1.5rem);
+  font-weight: 700;
+  word-break: break-word;
+  max-width: 100%;
+  padding: 0 4px;
+}
+
+/* =========================================
+   LABEL OPSI (A & B) — badge di atas tombol
+========================================= */
+.choice-badge {
+  position: absolute;
+  top: -2.8vh;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(135deg, #E74C3C, #C0392B);
+  color: #FFFFFF;
+  font-size: clamp(1.3rem, 3.5vw, 2rem);
+  font-weight: 900;
+  padding: 0.6vh 2.5vw;
+  border-radius: 40px;
+  border: 5px solid #FFFFFF;
+  box-shadow:
+    0 6px 0 #922B21,
+    0 8px 16px rgba(0, 0, 0, 0.4);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  letter-spacing: 1px;
+  white-space: nowrap;
+}
+
+/* =========================================
+   TUTORIAL OVERLAY — Slide instruksi sebelum quiz
+========================================= */
+#tutorial-overlay {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* Background fullscreen diisi inline via JS (bgrnd_tutorial{n}.webp).
+     Tidak ada warna gelap di sini supaya gambar tampil penuh. */
+  background-color: #000;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 200;
+  padding: 5vh 5vw;
+}
+
+.tutorial-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3vh;
+  max-width: 700px;
+  width: 100%;
+  padding: 5vh 5vw;
+  background: linear-gradient(135deg, rgba(15, 23, 42, 0.95), rgba(30, 41, 59, 0.92));
+  border: 2px solid rgba(125, 211, 252, 0.3);
+  border-radius: 28px;
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.6);
+  text-align: center;
+  animation: sv-fade-in 0.4s ease-in-out;
+}
+
+.tutorial-title {
+  font-size: clamp(1.5rem, 5vw, 2.4rem);
+  font-weight: 900;
+  color: #FFD700;
+  letter-spacing: 1px;
+  text-shadow: 0 2px 8px rgba(255, 215, 0, 0.3);
+}
+
+.tutorial-text {
+  font-size: clamp(1.2rem, 4vw, 1.8rem);
+  font-weight: 600;
+  color: #ffffff;
+  line-height: 1.6;
+  white-space: pre-line;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.tutorial-dots {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-top: 1vh;
+}
+
+.tutorial-dot {
+  display: inline-block;
+  width: clamp(10px, 2vw, 14px);
+  height: clamp(10px, 2vw, 14px);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.25);
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.tutorial-dot.active {
+  background: #FFD700;
+  transform: scale(1.3);
+  box-shadow: 0 0 12px rgba(255, 215, 0, 0.5);
+}
+
+/* =========================================
+   OPENING OVERLAY — Slideshow sambutan
+   z-index TINGGI (lebih tinggi dari loading-screen)
+   supaya tidak tertutup saat slideshow berjalan.
+========================================= */
+#opening-overlay {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #000;
+  z-index: 300;
+}
+
+.opening-slide {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.opening-image {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.opening-text {
+  position: absolute;
+  bottom: 8vh;
+  left: 5%;
+  right: 5%;
+  text-align: center;
+  color: #fff;
+  font-size: clamp(1.2rem, 4vw, 2rem);
+  font-weight: 700;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
+  padding: 1.5vh 3vw;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 12px;
+}
+
+.opening-dots {
+  position: absolute;
+  bottom: 3vh;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+}
+
+.opening-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.4);
+}
+
+.opening-dot.active {
+  background: #FFD700;
+}
+
+/* =========================================
+   ENDING OVERLAY — Layar akhir permainan
+========================================= */
+#ending-overlay {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, rgba(15, 23, 42, 0.94), rgba(30, 41, 59, 0.92));
+  z-index: 400;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  padding: 5vh 5vw;
+  cursor: pointer;
+}
+
+.ending-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2.5vh;
+  max-width: 560px;
+  width: 100%;
+  padding: 6vh 5vw;
+  background: linear-gradient(135deg, rgba(15, 23, 42, 0.96), rgba(30, 41, 59, 0.94));
+  border: 3px solid rgba(45, 212, 191, 0.4);
+  border-radius: 32px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.7), 0 0 40px rgba(45, 212, 191, 0.15);
+  text-align: center;
+  animation: sv-fade-in 0.5s ease-in-out;
+}
+
+.ending-emoji {
+  font-size: clamp(3rem, 10vw, 5rem);
+  animation: sv-pulse 1.8s ease-in-out infinite;
+}
+
+.ending-title {
+  font-size: clamp(2rem, 7vw, 3rem);
+  font-weight: 900;
+  color: #FFD700;
+  letter-spacing: 2px;
+  text-shadow: 0 2px 12px rgba(255, 215, 0, 0.4);
+}
+
+.ending-subtitle {
+  font-size: clamp(1.1rem, 3.5vw, 1.5rem);
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.ending-stats {
+  display: flex;
+  gap: clamp(12px, 4vw, 32px);
+  justify-content: center;
+  margin-top: 2vh;
+}
+
+.ending-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 2vh 3vw;
+  background: rgba(255, 255, 255, 0.06);
+  border: 2px solid rgba(255, 255, 255, 0.12);
+  border-radius: 20px;
+  min-width: 110px;
+}
+
+.ending-stat-icon {
+  font-size: clamp(1.6rem, 5vw, 2.4rem);
+}
+
+.ending-stat-value {
+  font-size: clamp(1.6rem, 5vw, 2.4rem);
+  font-weight: 900;
+  color: #FFD700;
+}
+
+.ending-stat-label {
+  font-size: clamp(0.75rem, 2.5vw, 0.95rem);
+  font-weight: 600;
+  color: #a0aec0;
+}
+
+.ending-hint {
+  margin-top: 2vh;
+  font-size: clamp(0.85rem, 2.8vw, 1rem);
+  color: #7dd3fc;
+  font-weight: 600;
+}
+
+/* ---------- Loading screen ---------- */
+#loading-screen {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #000;
+  color: #fff;
+  font-size: 1.4rem;
+  text-align: center;
+  padding: 24px;
+  z-index: 100;
+}
+
+#loading-screen-text {
+  animation: sv-pulse 1.8s ease-in-out infinite;
+}
+
+@keyframes sv-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.55; }
+}
+
+/* ---------- Preset animasi (AnimationManager) ---------- */
+.anim-fadeIn {
+  animation: sv-fade-in 0.3s ease-in-out;
+}
+
+.anim-fadeOut {
+  animation: sv-fade-out 0.3s ease-in-out;
+}
+
+.anim-slideIn {
+  animation: sv-slide-in 0.3s ease-in-out;
+}
+
+.anim-slideOut {
+  animation: sv-slide-out 0.3s ease-in-out;
+}
+
+@keyframes sv-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes sv-fade-out {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+@keyframes sv-slide-in {
+  from { transform: translateY(24px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes sv-slide-out {
+  from { transform: translateY(0); opacity: 1; }
+  to { transform: translateY(24px); opacity: 0; }
+}
+
+/* =========================================
+   RESPONSIVE — HP / layar kecil
+========================================= */
+@media (max-width: 600px) {
+  #progress-info {
+    top: clamp(6px, 1.2vh, 10px);
+    left: clamp(6px, 1.5vw, 10px);
+    padding: 0.5vh 2vw;
+    min-width: 80px;
+  }
+
+  #hud {
+    top: clamp(6px, 1.2vh, 10px);
+    right: clamp(6px, 1.5vw, 10px);
+    padding: 0.5vh 2.5vw;
+    font-size: clamp(0.7rem, 2.5vw, 0.85rem);
+  }
+
+  #scene-subtitle-box {
+    top: 8vh;
+    padding: 1.2vh 4vw;
+    max-height: 18vh;
+    border-radius: 14px;
+  }
+
+  #scene-subtitle-text {
+    font-size: clamp(0.85rem, 3.5vw, 1rem);
+  }
+
+  .visual-buttons-container {
+    height: 48vh;
+    max-height: 340px;
+    margin-top: 30vh;
+    gap: 2.5vw;
+    width: 92%;
+  }
+
+  .choice-btn {
+    border-width: 4px;
+    border-radius: 16px;
+    padding: 1.2vh 2vw;
+  }
+
+  .choice-text {
+    font-size: clamp(0.85rem, 3.5vw, 1.1rem);
+  }
+
+  .choice-badge {
+    top: -2.2vh;
+    font-size: clamp(1rem, 5vw, 1.4rem);
+    padding: 0.4vh 4vw;
+    border-width: 4px;
+  }
+}
+
+/* =========================================
+   RESPONSIVE — Layar sangat besar (desktop)
+========================================= */
+@media (min-width: 1400px) {
+  #scene-subtitle-box {
+    top: 9vh;
+    max-width: 1000px;
+    padding: 2.5vh 3vw;
+    max-height: 20vh;
+  }
+
+  .visual-buttons-container {
+    max-width: 1000px;
+    height: 48vh;
+    max-height: 420px;
+    margin-top: 34vh;
+  }
+
+  .choice-btn {
+    padding: 2.5vh 2vw;
+  }
+
+  .choice-text {
+    font-size: clamp(1.2rem, 1.8vw, 1.6rem);
+  }
+
+  .choice-badge {
+    font-size: clamp(1.4rem, 2.5vw, 2.2rem);
+  }
+}
+

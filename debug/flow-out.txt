@@ -1,0 +1,430 @@
+[1785952237048] [SVARAVITA][INFO][GameEngine] Bootstrap dimulai...
+[1785952237050] [SVARAVITA][INFO][GameEngine] Bootstrap selesai. Status: ready.
+[1785952237050] [FLOW] ===== bootstrap selesai, panggil engine.start() =====
+[1785952237050] [DEBUG] GameEngine.start() -> memanggil router.start()
+[1785952237050] [DEBUG] Router.start() DIPANGGIL
+[1785952237050] [DEBUG] OpeningManager.start() DIPANGGIL
+[1785952237051] [SVARAVITA][INFO][GameEngine] start() dipanggil — Router mengambil alih dari Scene Opening.
+[1785952237051] [DEBUG] OpeningManager.start() -> opening1 exists: false
+[SVARAVITA][WARN][OpeningManager] Tidak ada slide opening (opening1.webp) — langsung ke menu.
+[1785952237051] [DEBUG] OpeningManager._finish() DIPANGGIL — callback akan dipanggil
+[1785952237051] [DEBUG] OpeningManager._finish() -> memanggil completeCallback
+[1785952237051] [DEBUG] Router.start() -> Opening SELESAI, callback dipanggil. Mode MENU.
+[1785952237051] [DEBUG] Router.start() -> loadScene(system, menu) dipanggil
+[1785952237051] [DEBUG] SceneManager.loadScene('system', 'menu') DIPANGGIL
+[SVARAVITA][WARN][DataManager] "system" lolos validasi dengan 5 warning: [
+  'scenes[0] (id="opening"): id tidak mengikuti pola "{levelId}_scn{seq}" sesuai konvensi penamaan.',
+  'scenes[1] (id="logo"): id tidak mengikuti pola "{levelId}_scn{seq}" sesuai konvensi penamaan.',
+  'scenes[2] (id="tutorial"): id tidak mengikuti pola "{levelId}_scn{seq}" sesuai konvensi penamaan.',
+  'scenes[3] (id="menu"): id tidak mengikuti pola "{levelId}_scn{seq}" sesuai konvensi penamaan.',
+  'scenes[3] (id="menu"): "nextScene" ("level1_scn001") tidak ditemukan di level ini — kemungkinan referensi lintas-level (mis. scene pertama level berikutnya), tidak dapat diverifikasi penuh tanpa memuat level tujuan.'
+]
+[1785952237054] [SVARAVITA][INFO][DataManager] "system" berhasil dimuat & tervalidasi (4 scene).
+[1785952237054] [DEBUG] SceneManager.loadScene -> sceneData untuk 'menu': DITEMUKAN
+[1785952237054] [SVARAVITA][INFO][AssetLoader] Mulai preload "menu" (0 asset unik).
+[1785952237054] [SVARAVITA][INFO][AssetLoader] "menu" selesai — 0/0 asset sukses.
+[1785952237054] [DEBUG] SceneManager._enterScene('system', 'menu') -> scene:entered akan dipancarkan
+[1785952237054] [FLOW] 🏔 SCENE.ENTERED 'menu' (type='menu')
+[1785952237054] [DEBUG] UIManager._onSceneEntered -> sceneType='menu', levelId='system'
+[1785952237054] [DEBUG] UIManager._onSceneEntered -> MERENDER MENU (Mulai Baru/Lanjutkan)
+[1785952237054] [SVARAVITA][INFO][SceneManager] Scene aktif sekarang: "menu" (level "system", tipe "menu").
+[1785952237450] [FLOW] 🎯 MENU muncul — klik "Mulai Baru" (router.startNewGame)
+[SVARAVITA][WARN][TutorialManager] Tidak ada slide tutorial (bgrnd_tutorial1.webp) — langsung ke level.
+[1785952237952] [DEBUG] SceneManager.loadScene('level1', 'level1_scn001') DIPANGGIL
+[SVARAVITA][WARN][DataManager] "level1" lolos validasi dengan 1 warning: [
+  'scenes[8] (id="level1_scn009"): "nextScene" ("level2_scn001") tidak ditemukan di level ini — kemungkinan referensi lintas-level (mis. scene pertama level berikutnya), tidak dapat diverifikasi penuh tanpa memuat level tujuan.'
+]
+[1785952237952] [SVARAVITA][INFO][DataManager] "level1" berhasil dimuat & tervalidasi (9 scene).
+[1785952237952] [DEBUG] SceneManager.loadScene -> sceneData untuk 'level1_scn001': DITEMUKAN
+[1785952237953] [SVARAVITA][INFO][AssetLoader] Mulai preload "level1_scn001" (2 asset unik).
+[1785952237953] [SVARAVITA][INFO][AssetLoader] "level1_scn001" selesai — 2/2 asset sukses.
+[1785952237953] [DEBUG] SceneManager._enterScene('level1', 'level1_scn001') -> scene:entered akan dipancarkan
+[1785952237954] [FLOW] 🏔 SCENE.ENTERED 'level1_scn001' (type='narration')
+[1785952237954] [DEBUG] UIManager._onSceneEntered -> sceneType='narration', levelId='level1'
+[1785952237954] [SVARAVITA][INFO][SceneManager] Scene aktif sekarang: "level1_scn001" (level "level1", tipe "narration").
+[1785952238004] [DEBUG] SceneManager.loadScene('level1', 'level1_scn002') DIPANGGIL
+[1785952238004] [DEBUG] SceneManager.loadScene -> sceneData untuk 'level1_scn002': DITEMUKAN
+[1785952238005] [SVARAVITA][INFO][AssetLoader] Mulai preload "level1_scn002" (2 asset unik).
+[1785952238005] [SVARAVITA][INFO][AssetLoader] "level1_scn002" selesai — 2/2 asset sukses.
+[1785952238005] [DEBUG] SceneManager._enterScene('level1', 'level1_scn002') -> scene:entered akan dipancarkan
+[1785952238005] [FLOW] 🏔 SCENE.ENTERED 'level1_scn002' (type='dialogue')
+[1785952238005] [DEBUG] UIManager._onSceneEntered -> sceneType='dialogue', levelId='level1'
+[1785952238005] [SVARAVITA][INFO][SceneManager] Scene aktif sekarang: "level1_scn002" (level "level1", tipe "dialogue").
+[1785952238058] [DEBUG] SceneManager.loadScene('level1', 'level1_scn003') DIPANGGIL
+[1785952238058] [DEBUG] SceneManager.loadScene -> sceneData untuk 'level1_scn003': DITEMUKAN
+[1785952238058] [SVARAVITA][INFO][AssetLoader] Mulai preload "level1_scn003" (2 asset unik).
+[1785952238059] [SVARAVITA][INFO][AssetLoader] "level1_scn003" selesai — 2/2 asset sukses.
+[1785952238059] [DEBUG] SceneManager._enterScene('level1', 'level1_scn003') -> scene:entered akan dipancarkan
+[1785952238059] [FLOW] 🏔 SCENE.ENTERED 'level1_scn003' (type='dialogue')
+[1785952238059] [DEBUG] UIManager._onSceneEntered -> sceneType='dialogue', levelId='level1'
+[1785952238059] [SVARAVITA][INFO][SceneManager] Scene aktif sekarang: "level1_scn003" (level "level1", tipe "dialogue").
+[1785952238111] [DEBUG] SceneManager.loadScene('level1', 'level1_scn004') DIPANGGIL
+[1785952238111] [DEBUG] SceneManager.loadScene -> sceneData untuk 'level1_scn004': DITEMUKAN
+[1785952238112] [SVARAVITA][INFO][AssetLoader] Mulai preload "level1_scn004" (2 asset unik).
+[1785952238112] [SVARAVITA][INFO][AssetLoader] "level1_scn004" selesai — 2/2 asset sukses.
+[1785952238112] [DEBUG] SceneManager._enterScene('level1', 'level1_scn004') -> scene:entered akan dipancarkan
+[1785952238112] [FLOW] 🏔 SCENE.ENTERED 'level1_scn004' (type='dialogue')
+[1785952238112] [DEBUG] UIManager._onSceneEntered -> sceneType='dialogue', levelId='level1'
+[1785952238112] [SVARAVITA][INFO][SceneManager] Scene aktif sekarang: "level1_scn004" (level "level1", tipe "dialogue").
+[1785952238164] [DEBUG] SceneManager.loadScene('level1', 'level1_scn005') DIPANGGIL
+[1785952238164] [DEBUG] SceneManager.loadScene -> sceneData untuk 'level1_scn005': DITEMUKAN
+[1785952238164] [SVARAVITA][INFO][AssetLoader] Mulai preload "level1_scn005" (2 asset unik).
+[1785952238165] [SVARAVITA][INFO][AssetLoader] "level1_scn005" selesai — 2/2 asset sukses.
+[1785952238165] [DEBUG] SceneManager._enterScene('level1', 'level1_scn005') -> scene:entered akan dipancarkan
+[1785952238165] [FLOW] 🏔 SCENE.ENTERED 'level1_scn005' (type='narration')
+[1785952238165] [DEBUG] UIManager._onSceneEntered -> sceneType='narration', levelId='level1'
+[1785952238165] [SVARAVITA][INFO][SceneManager] Scene aktif sekarang: "level1_scn005" (level "level1", tipe "narration").
+[1785952238217] [DEBUG] SceneManager.loadScene('level1', 'level1_scn006') DIPANGGIL
+[1785952238217] [DEBUG] SceneManager.loadScene -> sceneData untuk 'level1_scn006': DITEMUKAN
+[1785952238217] [SVARAVITA][INFO][AssetLoader] Mulai preload "level1_scn006" (2 asset unik).
+[1785952238218] [SVARAVITA][INFO][AssetLoader] "level1_scn006" selesai — 2/2 asset sukses.
+[1785952238218] [DEBUG] SceneManager._enterScene('level1', 'level1_scn006') -> scene:entered akan dipancarkan
+[1785952238218] [FLOW] 🏔 SCENE.ENTERED 'level1_scn006' (type='dialogue')
+[1785952238218] [DEBUG] UIManager._onSceneEntered -> sceneType='dialogue', levelId='level1'
+[1785952238218] [SVARAVITA][INFO][SceneManager] Scene aktif sekarang: "level1_scn006" (level "level1", tipe "dialogue").
+[1785952238269] [DEBUG] SceneManager.loadScene('level1', 'level1_scn007') DIPANGGIL
+[1785952238269] [DEBUG] SceneManager.loadScene -> sceneData untuk 'level1_scn007': DITEMUKAN
+[1785952238269] [SVARAVITA][INFO][AssetLoader] Mulai preload "level1_scn007" (2 asset unik).
+[1785952238270] [SVARAVITA][INFO][AssetLoader] "level1_scn007" selesai — 2/2 asset sukses.
+[1785952238270] [DEBUG] SceneManager._enterScene('level1', 'level1_scn007') -> scene:entered akan dipancarkan
+[1785952238270] [FLOW] 🏔 SCENE.ENTERED 'level1_scn007' (type='narration')
+[1785952238270] [DEBUG] UIManager._onSceneEntered -> sceneType='narration', levelId='level1'
+[1785952238270] [SVARAVITA][INFO][SceneManager] Scene aktif sekarang: "level1_scn007" (level "level1", tipe "narration").
+[1785952238323] [DEBUG] SceneManager.loadScene('level1', 'level1_scn008') DIPANGGIL
+[1785952238323] [DEBUG] SceneManager.loadScene -> sceneData untuk 'level1_scn008': DITEMUKAN
+[1785952238324] [SVARAVITA][INFO][AssetLoader] Mulai preload "level1_scn008" (25 asset unik).
+[1785952238333] [SVARAVITA][INFO][AssetLoader] "level1_scn008" selesai — 25/25 asset sukses.
+[1785952238333] [DEBUG] SceneManager._enterScene('level1', 'level1_scn008') -> scene:entered akan dipancarkan
+[1785952238333] [FLOW] 🏔 SCENE.ENTERED 'level1_scn008' (type='quiz')
+[1785952238333] [DEBUG] UIManager._onSceneEntered -> sceneType='quiz', levelId='level1'
+[1785952238333] [FLOW] 📝 QUESTION_STARTED idx=0/5
+[1785952238334] [SVARAVITA][INFO][SceneManager] Scene aktif sekarang: "level1_scn008" (level "level1", tipe "quiz").
+[1785952238654] [FLOW] 👆 EMIT gesture:selectLeftIntent
+[1785952238654] [FLOW] ✔ CHOICE.SELECTED diterima engine (side='left')
+[1785952238654] [FLOW] 🎯 jawaban left -> SALAH +0 poin
+[1785952238704] [FLOW] 📝 QUESTION_STARTED idx=1/5
+[1785952240258] [FLOW] 👆 EMIT gesture:selectRightIntent
+[1785952240258] [FLOW] ✔ CHOICE.SELECTED diterima engine (side='right')
+[1785952240258] [FLOW] 🎯 jawaban right -> SALAH +0 poin
+[1785952240308] [FLOW] 📝 QUESTION_STARTED idx=2/5
+[1785952241861] [FLOW] 👆 EMIT gesture:selectLeftIntent
+[1785952241861] [FLOW] ✔ CHOICE.SELECTED diterima engine (side='left')
+[1785952241861] [FLOW] 🎯 jawaban left -> BENAR +10 poin
+[1785952241913] [FLOW] 📝 QUESTION_STARTED idx=3/5
+[1785952243465] [FLOW] 👆 EMIT gesture:selectRightIntent
+[1785952243466] [FLOW] ✔ CHOICE.SELECTED diterima engine (side='right')
+[1785952243466] [FLOW] 🎯 jawaban right -> SALAH +0 poin
+[1785952243517] [FLOW] 📝 QUESTION_STARTED idx=4/5
+[1785952245070] [FLOW] 👆 EMIT gesture:selectLeftIntent
+[1785952245070] [FLOW] ✔ CHOICE.SELECTED diterima engine (side='left')
+[1785952245070] [FLOW] 🎯 jawaban left -> BENAR +10 poin
+[1785952245121] [FLOW] 🏁 QUIZ.COMPLETED (benar=2/5)
+[1785952245122] [DEBUG] SceneManager.loadScene('level1', 'level1_scn009') DIPANGGIL
+[1785952245122] [DEBUG] SceneManager.loadScene -> sceneData untuk 'level1_scn009': DITEMUKAN
+[1785952245122] [SVARAVITA][INFO][AssetLoader] Mulai preload "level1_scn009" (2 asset unik).
+[1785952245123] [SVARAVITA][INFO][AssetLoader] "level1_scn009" selesai — 2/2 asset sukses.
+[1785952245123] [DEBUG] SceneManager._enterScene('level1', 'level1_scn009') -> scene:entered akan dipancarkan
+[1785952245123] [FLOW] 🏔 SCENE.ENTERED 'level1_scn009' (type='level_unlock')
+[1785952245123] [DEBUG] UIManager._onSceneEntered -> sceneType='level_unlock', levelId='level1'
+[1785952245123] [SVARAVITA][INFO][SceneManager] Scene aktif sekarang: "level1_scn009" (level "level1", tipe "level_unlock").
+[1785952245174] [DEBUG] SceneManager.loadScene('level2', 'level2_scn001') DIPANGGIL
+[SVARAVITA][WARN][DataManager] "level2" lolos validasi dengan 1 warning: [
+  'scenes[5] (id="level2_scn006"): "nextScene" ("level3_scn001") tidak ditemukan di level ini — kemungkinan referensi lintas-level (mis. scene pertama level berikutnya), tidak dapat diverifikasi penuh tanpa memuat level tujuan.'
+]
+[1785952245175] [SVARAVITA][INFO][DataManager] "level2" berhasil dimuat & tervalidasi (6 scene).
+[1785952245175] [DEBUG] SceneManager.loadScene -> sceneData untuk 'level2_scn001': DITEMUKAN
+[1785952245175] [SVARAVITA][INFO][AssetLoader] Mulai preload "level2_scn001" (2 asset unik).
+[1785952245175] [SVARAVITA][INFO][AssetLoader] "level2_scn001" selesai — 2/2 asset sukses.
+[1785952245176] [DEBUG] SceneManager._enterScene('level2', 'level2_scn001') -> scene:entered akan dipancarkan
+[1785952245176] [FLOW] 🏔 SCENE.ENTERED 'level2_scn001' (type='narration')
+[1785952245176] [DEBUG] UIManager._onSceneEntered -> sceneType='narration', levelId='level2'
+[1785952245176] [SVARAVITA][INFO][SceneManager] Scene aktif sekarang: "level2_scn001" (level "level2", tipe "narration").
+[1785952245228] [DEBUG] SceneManager.loadScene('level2', 'level2_scn002') DIPANGGIL
+[1785952245228] [DEBUG] SceneManager.loadScene -> sceneData untuk 'level2_scn002': DITEMUKAN
+[1785952245228] [SVARAVITA][INFO][AssetLoader] Mulai preload "level2_scn002" (2 asset unik).
+[1785952245228] [SVARAVITA][INFO][AssetLoader] "level2_scn002" selesai — 2/2 asset sukses.
+[1785952245228] [DEBUG] SceneManager._enterScene('level2', 'level2_scn002') -> scene:entered akan dipancarkan
+[1785952245228] [FLOW] 🏔 SCENE.ENTERED 'level2_scn002' (type='dialogue')
+[1785952245228] [DEBUG] UIManager._onSceneEntered -> sceneType='dialogue', levelId='level2'
+[1785952245228] [SVARAVITA][INFO][SceneManager] Scene aktif sekarang: "level2_scn002" (level "level2", tipe "dialogue").
+[1785952245281] [DEBUG] SceneManager.loadScene('level2', 'level2_scn003') DIPANGGIL
+[1785952245281] [DEBUG] SceneManager.loadScene -> sceneData untuk 'level2_scn003': DITEMUKAN
+[1785952245281] [SVARAVITA][INFO][AssetLoader] Mulai preload "level2_scn003" (2 asset unik).
+[1785952245281] [SVARAVITA][INFO][AssetLoader] "level2_scn003" selesai — 2/2 asset sukses.
+[1785952245281] [DEBUG] SceneManager._enterScene('level2', 'level2_scn003') -> scene:entered akan dipancarkan
+[1785952245281] [FLOW] 🏔 SCENE.ENTERED 'level2_scn003' (type='dialogue')
+[1785952245281] [DEBUG] UIManager._onSceneEntered -> sceneType='dialogue', levelId='level2'
+[1785952245281] [SVARAVITA][INFO][SceneManager] Scene aktif sekarang: "level2_scn003" (level "level2", tipe "dialogue").
+[1785952245333] [DEBUG] SceneManager.loadScene('level2', 'level2_scn004') DIPANGGIL
+[1785952245333] [DEBUG] SceneManager.loadScene -> sceneData untuk 'level2_scn004': DITEMUKAN
+[1785952245334] [SVARAVITA][INFO][AssetLoader] Mulai preload "level2_scn004" (2 asset unik).
+[1785952245334] [SVARAVITA][INFO][AssetLoader] "level2_scn004" selesai — 2/2 asset sukses.
+[1785952245334] [DEBUG] SceneManager._enterScene('level2', 'level2_scn004') -> scene:entered akan dipancarkan
+[1785952245334] [FLOW] 🏔 SCENE.ENTERED 'level2_scn004' (type='narration')
+[1785952245334] [DEBUG] UIManager._onSceneEntered -> sceneType='narration', levelId='level2'
+[1785952245334] [SVARAVITA][INFO][SceneManager] Scene aktif sekarang: "level2_scn004" (level "level2", tipe "narration").
+[1785952245387] [DEBUG] SceneManager.loadScene('level2', 'level2_scn005') DIPANGGIL
+[1785952245387] [DEBUG] SceneManager.loadScene -> sceneData untuk 'level2_scn005': DITEMUKAN
+[1785952245387] [SVARAVITA][INFO][AssetLoader] Mulai preload "level2_scn005" (25 asset unik).
+[1785952245398] [SVARAVITA][INFO][AssetLoader] "level2_scn005" selesai — 25/25 asset sukses.
+[1785952245398] [DEBUG] SceneManager._enterScene('level2', 'level2_scn005') -> scene:entered akan dipancarkan
+[1785952245398] [FLOW] 🏔 SCENE.ENTERED 'level2_scn005' (type='quiz')
+[1785952245398] [DEBUG] UIManager._onSceneEntered -> sceneType='quiz', levelId='level2'
+[1785952245398] [FLOW] 📝 QUESTION_STARTED idx=0/5
+[1785952245398] [SVARAVITA][INFO][SceneManager] Scene aktif sekarang: "level2_scn005" (level "level2", tipe "quiz").
+[1785952246672] [FLOW] 👆 EMIT gesture:selectRightIntent
+[1785952246672] [FLOW] ✔ CHOICE.SELECTED diterima engine (side='right')
+[1785952246672] [FLOW] 🎯 jawaban right -> SALAH +0 poin
+[1785952246723] [FLOW] 📝 QUESTION_STARTED idx=1/5
+[1785952248275] [FLOW] 👆 EMIT gesture:selectLeftIntent
+[1785952248275] [FLOW] ✔ CHOICE.SELECTED diterima engine (side='left')
+[1785952248275] [FLOW] 🎯 jawaban left -> BENAR +10 poin
+[1785952248326] [FLOW] 📝 QUESTION_STARTED idx=2/5
+[1785952249880] [FLOW] 👆 EMIT gesture:selectRightIntent
+[1785952249881] [FLOW] ✔ CHOICE.SELECTED diterima engine (side='right')
+[1785952249881] [FLOW] 🎯 jawaban right -> SALAH +0 poin
+[1785952249932] [FLOW] 📝 QUESTION_STARTED idx=3/5
+[1785952251484] [FLOW] 👆 EMIT gesture:selectLeftIntent
+[1785952251484] [FLOW] ✔ CHOICE.SELECTED diterima engine (side='left')
+[1785952251484] [FLOW] 🎯 jawaban left -> BENAR +10 poin
+[1785952251535] [FLOW] 📝 QUESTION_STARTED idx=4/5
+[1785952253087] [FLOW] 👆 EMIT gesture:selectRightIntent
+[1785952253087] [FLOW] ✔ CHOICE.SELECTED diterima engine (side='right')
+[1785952253087] [FLOW] 🎯 jawaban right -> SALAH +0 poin
+[1785952253138] [FLOW] 🏁 QUIZ.COMPLETED (benar=2/5)
+[1785952253138] [DEBUG] SceneManager.loadScene('level2', 'level2_scn006') DIPANGGIL
+[1785952253138] [DEBUG] SceneManager.loadScene -> sceneData untuk 'level2_scn006': DITEMUKAN
+[1785952253138] [SVARAVITA][INFO][AssetLoader] Mulai preload "level2_scn006" (2 asset unik).
+[1785952253139] [SVARAVITA][INFO][AssetLoader] "level2_scn006" selesai — 2/2 asset sukses.
+[1785952253139] [DEBUG] SceneManager._enterScene('level2', 'level2_scn006') -> scene:entered akan dipancarkan
+[1785952253139] [FLOW] 🏔 SCENE.ENTERED 'level2_scn006' (type='level_unlock')
+[1785952253139] [DEBUG] UIManager._onSceneEntered -> sceneType='level_unlock', levelId='level2'
+[1785952253139] [SVARAVITA][INFO][SceneManager] Scene aktif sekarang: "level2_scn006" (level "level2", tipe "level_unlock").
+[1785952253190] [DEBUG] SceneManager.loadScene('level3', 'level3_scn001') DIPANGGIL
+[SVARAVITA][WARN][DataManager] "level3" lolos validasi dengan 1 warning: [
+  'scenes[6] (id="level3_scn007"): "nextScene" ("level4_scn001") tidak ditemukan di level ini — kemungkinan referensi lintas-level (mis. scene pertama level berikutnya), tidak dapat diverifikasi penuh tanpa memuat level tujuan.'
+]
+[1785952253191] [SVARAVITA][INFO][DataManager] "level3" berhasil dimuat & tervalidasi (7 scene).
+[1785952253191] [DEBUG] SceneManager.loadScene -> sceneData untuk 'level3_scn001': DITEMUKAN
+[1785952253191] [SVARAVITA][INFO][AssetLoader] Mulai preload "level3_scn001" (2 asset unik).
+[1785952253192] [SVARAVITA][INFO][AssetLoader] "level3_scn001" selesai — 2/2 asset sukses.
+[1785952253192] [DEBUG] SceneManager._enterScene('level3', 'level3_scn001') -> scene:entered akan dipancarkan
+[1785952253192] [FLOW] 🏔 SCENE.ENTERED 'level3_scn001' (type='narration')
+[1785952253192] [DEBUG] UIManager._onSceneEntered -> sceneType='narration', levelId='level3'
+[1785952253193] [SVARAVITA][INFO][SceneManager] Scene aktif sekarang: "level3_scn001" (level "level3", tipe "narration").
+[1785952253248] [DEBUG] SceneManager.loadScene('level3', 'level3_scn002') DIPANGGIL
+[1785952253248] [DEBUG] SceneManager.loadScene -> sceneData untuk 'level3_scn002': DITEMUKAN
+[1785952253248] [SVARAVITA][INFO][AssetLoader] Mulai preload "level3_scn002" (2 asset unik).
+[1785952253248] [SVARAVITA][INFO][AssetLoader] "level3_scn002" selesai — 2/2 asset sukses.
+[1785952253248] [DEBUG] SceneManager._enterScene('level3', 'level3_scn002') -> scene:entered akan dipancarkan
+[1785952253248] [FLOW] 🏔 SCENE.ENTERED 'level3_scn002' (type='dialogue')
+[1785952253249] [DEBUG] UIManager._onSceneEntered -> sceneType='dialogue', levelId='level3'
+[1785952253249] [SVARAVITA][INFO][SceneManager] Scene aktif sekarang: "level3_scn002" (level "level3", tipe "dialogue").
+[1785952253301] [DEBUG] SceneManager.loadScene('level3', 'level3_scn003') DIPANGGIL
+[1785952253301] [DEBUG] SceneManager.loadScene -> sceneData untuk 'level3_scn003': DITEMUKAN
+[1785952253301] [SVARAVITA][INFO][AssetLoader] Mulai preload "level3_scn003" (2 asset unik).
+[1785952253301] [SVARAVITA][INFO][AssetLoader] "level3_scn003" selesai — 2/2 asset sukses.
+[1785952253301] [DEBUG] SceneManager._enterScene('level3', 'level3_scn003') -> scene:entered akan dipancarkan
+[1785952253301] [FLOW] 🏔 SCENE.ENTERED 'level3_scn003' (type='dialogue')
+[1785952253301] [DEBUG] UIManager._onSceneEntered -> sceneType='dialogue', levelId='level3'
+[1785952253301] [SVARAVITA][INFO][SceneManager] Scene aktif sekarang: "level3_scn003" (level "level3", tipe "dialogue").
+[1785952253352] [DEBUG] SceneManager.loadScene('level3', 'level3_scn004') DIPANGGIL
+[1785952253352] [DEBUG] SceneManager.loadScene -> sceneData untuk 'level3_scn004': DITEMUKAN
+[1785952253352] [SVARAVITA][INFO][AssetLoader] Mulai preload "level3_scn004" (2 asset unik).
+[1785952253353] [SVARAVITA][INFO][AssetLoader] "level3_scn004" selesai — 2/2 asset sukses.
+[1785952253353] [DEBUG] SceneManager._enterScene('level3', 'level3_scn004') -> scene:entered akan dipancarkan
+[1785952253353] [FLOW] 🏔 SCENE.ENTERED 'level3_scn004' (type='dialogue')
+[1785952253353] [DEBUG] UIManager._onSceneEntered -> sceneType='dialogue', levelId='level3'
+[1785952253353] [SVARAVITA][INFO][SceneManager] Scene aktif sekarang: "level3_scn004" (level "level3", tipe "dialogue").
+[1785952253405] [DEBUG] SceneManager.loadScene('level3', 'level3_scn005') DIPANGGIL
+[1785952253405] [DEBUG] SceneManager.loadScene -> sceneData untuk 'level3_scn005': DITEMUKAN
+[1785952253405] [SVARAVITA][INFO][AssetLoader] Mulai preload "level3_scn005" (2 asset unik).
+[1785952253405] [SVARAVITA][INFO][AssetLoader] "level3_scn005" selesai — 2/2 asset sukses.
+[1785952253405] [DEBUG] SceneManager._enterScene('level3', 'level3_scn005') -> scene:entered akan dipancarkan
+[1785952253405] [FLOW] 🏔 SCENE.ENTERED 'level3_scn005' (type='narration')
+[1785952253405] [DEBUG] UIManager._onSceneEntered -> sceneType='narration', levelId='level3'
+[1785952253405] [SVARAVITA][INFO][SceneManager] Scene aktif sekarang: "level3_scn005" (level "level3", tipe "narration").
+[1785952253458] [DEBUG] SceneManager.loadScene('level3', 'level3_scn006') DIPANGGIL
+[1785952253458] [DEBUG] SceneManager.loadScene -> sceneData untuk 'level3_scn006': DITEMUKAN
+[1785952253458] [SVARAVITA][INFO][AssetLoader] Mulai preload "level3_scn006" (25 asset unik).
+[1785952253467] [SVARAVITA][INFO][AssetLoader] "level3_scn006" selesai — 25/25 asset sukses.
+[1785952253468] [DEBUG] SceneManager._enterScene('level3', 'level3_scn006') -> scene:entered akan dipancarkan
+[1785952253468] [FLOW] 🏔 SCENE.ENTERED 'level3_scn006' (type='quiz')
+[1785952253468] [DEBUG] UIManager._onSceneEntered -> sceneType='quiz', levelId='level3'
+[1785952253468] [FLOW] 📝 QUESTION_STARTED idx=0/5
+[1785952253468] [SVARAVITA][INFO][SceneManager] Scene aktif sekarang: "level3_scn006" (level "level3", tipe "quiz").
+[1785952254690] [FLOW] 👆 EMIT gesture:selectLeftIntent
+[1785952254691] [FLOW] ✔ CHOICE.SELECTED diterima engine (side='left')
+[1785952254691] [FLOW] 🎯 jawaban left -> BENAR +10 poin
+[1785952254742] [FLOW] 📝 QUESTION_STARTED idx=1/5
+[1785952256294] [FLOW] 👆 EMIT gesture:selectRightIntent
+[1785952256295] [FLOW] ✔ CHOICE.SELECTED diterima engine (side='right')
+[1785952256295] [FLOW] 🎯 jawaban right -> SALAH +0 poin
+[1785952256346] [FLOW] 📝 QUESTION_STARTED idx=2/5
+[1785952257899] [FLOW] 👆 EMIT gesture:selectLeftIntent
+[1785952257899] [FLOW] ✔ CHOICE.SELECTED diterima engine (side='left')
+[1785952257899] [FLOW] 🎯 jawaban left -> BENAR +10 poin
+[1785952257950] [FLOW] 📝 QUESTION_STARTED idx=3/5
+[1785952259502] [FLOW] 👆 EMIT gesture:selectRightIntent
+[1785952259503] [FLOW] ✔ CHOICE.SELECTED diterima engine (side='right')
+[1785952259503] [FLOW] 🎯 jawaban right -> SALAH +0 poin
+[1785952259554] [FLOW] 📝 QUESTION_STARTED idx=4/5
+[1785952261106] [FLOW] 👆 EMIT gesture:selectLeftIntent
+[1785952261106] [FLOW] ✔ CHOICE.SELECTED diterima engine (side='left')
+[1785952261106] [FLOW] 🎯 jawaban left -> BENAR +10 poin
+[1785952261158] [FLOW] 🏁 QUIZ.COMPLETED (benar=3/5)
+[1785952261158] [DEBUG] SceneManager.loadScene('level3', 'level3_scn007') DIPANGGIL
+[1785952261158] [DEBUG] SceneManager.loadScene -> sceneData untuk 'level3_scn007': DITEMUKAN
+[1785952261158] [SVARAVITA][INFO][AssetLoader] Mulai preload "level3_scn007" (2 asset unik).
+[1785952261159] [SVARAVITA][INFO][AssetLoader] "level3_scn007" selesai — 2/2 asset sukses.
+[1785952261159] [DEBUG] SceneManager._enterScene('level3', 'level3_scn007') -> scene:entered akan dipancarkan
+[1785952261159] [FLOW] 🏔 SCENE.ENTERED 'level3_scn007' (type='level_unlock')
+[1785952261159] [DEBUG] UIManager._onSceneEntered -> sceneType='level_unlock', levelId='level3'
+[1785952261159] [SVARAVITA][INFO][SceneManager] Scene aktif sekarang: "level3_scn007" (level "level3", tipe "level_unlock").
+[1785952261209] [DEBUG] SceneManager.loadScene('level4', 'level4_scn001') DIPANGGIL
+[SVARAVITA][WARN][DataManager] "level4" lolos validasi dengan 1 warning: [
+  'scenes[6] (id="level4_scn007"): "nextScene" ("level5_scn001") tidak ditemukan di level ini — kemungkinan referensi lintas-level (mis. scene pertama level berikutnya), tidak dapat diverifikasi penuh tanpa memuat level tujuan.'
+]
+[1785952261210] [SVARAVITA][INFO][DataManager] "level4" berhasil dimuat & tervalidasi (7 scene).
+[1785952261210] [DEBUG] SceneManager.loadScene -> sceneData untuk 'level4_scn001': DITEMUKAN
+[1785952261210] [SVARAVITA][INFO][AssetLoader] Mulai preload "level4_scn001" (2 asset unik).
+[1785952261211] [SVARAVITA][INFO][AssetLoader] "level4_scn001" selesai — 2/2 asset sukses.
+[1785952261211] [DEBUG] SceneManager._enterScene('level4', 'level4_scn001') -> scene:entered akan dipancarkan
+[1785952261211] [FLOW] 🏔 SCENE.ENTERED 'level4_scn001' (type='narration')
+[1785952261212] [DEBUG] UIManager._onSceneEntered -> sceneType='narration', levelId='level4'
+[1785952261212] [SVARAVITA][INFO][SceneManager] Scene aktif sekarang: "level4_scn001" (level "level4", tipe "narration").
+[1785952261264] [DEBUG] SceneManager.loadScene('level4', 'level4_scn002') DIPANGGIL
+[1785952261264] [DEBUG] SceneManager.loadScene -> sceneData untuk 'level4_scn002': DITEMUKAN
+[1785952261264] [SVARAVITA][INFO][AssetLoader] Mulai preload "level4_scn002" (2 asset unik).
+[1785952261265] [SVARAVITA][INFO][AssetLoader] "level4_scn002" selesai — 2/2 asset sukses.
+[1785952261265] [DEBUG] SceneManager._enterScene('level4', 'level4_scn002') -> scene:entered akan dipancarkan
+[1785952261265] [FLOW] 🏔 SCENE.ENTERED 'level4_scn002' (type='dialogue')
+[1785952261265] [DEBUG] UIManager._onSceneEntered -> sceneType='dialogue', levelId='level4'
+[1785952261265] [SVARAVITA][INFO][SceneManager] Scene aktif sekarang: "level4_scn002" (level "level4", tipe "dialogue").
+[1785952261317] [DEBUG] SceneManager.loadScene('level4', 'level4_scn003') DIPANGGIL
+[1785952261317] [DEBUG] SceneManager.loadScene -> sceneData untuk 'level4_scn003': DITEMUKAN
+[1785952261317] [SVARAVITA][INFO][AssetLoader] Mulai preload "level4_scn003" (2 asset unik).
+[1785952261318] [SVARAVITA][INFO][AssetLoader] "level4_scn003" selesai — 2/2 asset sukses.
+[1785952261318] [DEBUG] SceneManager._enterScene('level4', 'level4_scn003') -> scene:entered akan dipancarkan
+[1785952261318] [FLOW] 🏔 SCENE.ENTERED 'level4_scn003' (type='dialogue')
+[1785952261318] [DEBUG] UIManager._onSceneEntered -> sceneType='dialogue', levelId='level4'
+[1785952261318] [SVARAVITA][INFO][SceneManager] Scene aktif sekarang: "level4_scn003" (level "level4", tipe "dialogue").
+[1785952261370] [DEBUG] SceneManager.loadScene('level4', 'level4_scn004') DIPANGGIL
+[1785952261370] [DEBUG] SceneManager.loadScene -> sceneData untuk 'level4_scn004': DITEMUKAN
+[1785952261370] [SVARAVITA][INFO][AssetLoader] Mulai preload "level4_scn004" (2 asset unik).
+[1785952261370] [SVARAVITA][INFO][AssetLoader] "level4_scn004" selesai — 2/2 asset sukses.
+[1785952261370] [DEBUG] SceneManager._enterScene('level4', 'level4_scn004') -> scene:entered akan dipancarkan
+[1785952261370] [FLOW] 🏔 SCENE.ENTERED 'level4_scn004' (type='dialogue')
+[1785952261370] [DEBUG] UIManager._onSceneEntered -> sceneType='dialogue', levelId='level4'
+[1785952261370] [SVARAVITA][INFO][SceneManager] Scene aktif sekarang: "level4_scn004" (level "level4", tipe "dialogue").
+[1785952261423] [DEBUG] SceneManager.loadScene('level4', 'level4_scn005') DIPANGGIL
+[1785952261423] [DEBUG] SceneManager.loadScene -> sceneData untuk 'level4_scn005': DITEMUKAN
+[1785952261423] [SVARAVITA][INFO][AssetLoader] Mulai preload "level4_scn005" (2 asset unik).
+[1785952261423] [SVARAVITA][INFO][AssetLoader] "level4_scn005" selesai — 2/2 asset sukses.
+[1785952261424] [DEBUG] SceneManager._enterScene('level4', 'level4_scn005') -> scene:entered akan dipancarkan
+[1785952261424] [FLOW] 🏔 SCENE.ENTERED 'level4_scn005' (type='narration')
+[1785952261424] [DEBUG] UIManager._onSceneEntered -> sceneType='narration', levelId='level4'
+[1785952261424] [SVARAVITA][INFO][SceneManager] Scene aktif sekarang: "level4_scn005" (level "level4", tipe "narration").
+[1785952261476] [DEBUG] SceneManager.loadScene('level4', 'level4_scn006') DIPANGGIL
+[1785952261476] [DEBUG] SceneManager.loadScene -> sceneData untuk 'level4_scn006': DITEMUKAN
+[1785952261476] [SVARAVITA][INFO][AssetLoader] Mulai preload "level4_scn006" (20 asset unik).
+[1785952261485] [SVARAVITA][INFO][AssetLoader] "level4_scn006" selesai — 20/20 asset sukses.
+[1785952261485] [DEBUG] SceneManager._enterScene('level4', 'level4_scn006') -> scene:entered akan dipancarkan
+[1785952261485] [FLOW] 🏔 SCENE.ENTERED 'level4_scn006' (type='quiz')
+[1785952261485] [DEBUG] UIManager._onSceneEntered -> sceneType='quiz', levelId='level4'
+[1785952261486] [FLOW] 📝 QUESTION_STARTED idx=0/4
+[1785952261486] [SVARAVITA][INFO][SceneManager] Scene aktif sekarang: "level4_scn006" (level "level4", tipe "quiz").
+[1785952262711] [FLOW] 👆 EMIT gesture:selectRightIntent
+[1785952262711] [FLOW] ✔ CHOICE.SELECTED diterima engine (side='right')
+[1785952262711] [FLOW] 🎯 jawaban right -> BENAR +10 poin
+[1785952262762] [FLOW] 📝 QUESTION_STARTED idx=1/4
+[1785952264314] [FLOW] 👆 EMIT gesture:selectLeftIntent
+[1785952264314] [FLOW] ✔ CHOICE.SELECTED diterima engine (side='left')
+[1785952264314] [FLOW] 🎯 jawaban left -> SALAH +0 poin
+[1785952264365] [FLOW] 📝 QUESTION_STARTED idx=2/4
+[1785952265919] [FLOW] 👆 EMIT gesture:selectRightIntent
+[1785952265919] [FLOW] ✔ CHOICE.SELECTED diterima engine (side='right')
+[1785952265919] [FLOW] 🎯 jawaban right -> BENAR +10 poin
+[1785952265970] [FLOW] 📝 QUESTION_STARTED idx=3/4
+[1785952267523] [FLOW] 👆 EMIT gesture:selectLeftIntent
+[1785952267523] [FLOW] ✔ CHOICE.SELECTED diterima engine (side='left')
+[1785952267523] [FLOW] 🎯 jawaban left -> BENAR +10 poin
+[1785952267574] [FLOW] 🏁 QUIZ.COMPLETED (benar=3/4)
+[1785952267574] [DEBUG] SceneManager.loadScene('level4', 'level4_scn007') DIPANGGIL
+[1785952267574] [DEBUG] SceneManager.loadScene -> sceneData untuk 'level4_scn007': DITEMUKAN
+[1785952267574] [SVARAVITA][INFO][AssetLoader] Mulai preload "level4_scn007" (2 asset unik).
+[1785952267575] [SVARAVITA][INFO][AssetLoader] "level4_scn007" selesai — 2/2 asset sukses.
+[1785952267575] [DEBUG] SceneManager._enterScene('level4', 'level4_scn007') -> scene:entered akan dipancarkan
+[1785952267575] [FLOW] 🏔 SCENE.ENTERED 'level4_scn007' (type='level_unlock')
+[1785952267575] [DEBUG] UIManager._onSceneEntered -> sceneType='level_unlock', levelId='level4'
+[1785952267575] [SVARAVITA][INFO][SceneManager] Scene aktif sekarang: "level4_scn007" (level "level4", tipe "level_unlock").
+[1785952267626] [DEBUG] SceneManager.loadScene('level5', 'level5_scn001') DIPANGGIL
+[1785952267627] [SVARAVITA][INFO][DataManager] "level5" berhasil dimuat & tervalidasi (6 scene).
+[1785952267627] [DEBUG] SceneManager.loadScene -> sceneData untuk 'level5_scn001': DITEMUKAN
+[1785952267627] [SVARAVITA][INFO][AssetLoader] Mulai preload "level5_scn001" (2 asset unik).
+[1785952267629] [SVARAVITA][INFO][AssetLoader] "level5_scn001" selesai — 2/2 asset sukses.
+[1785952267629] [DEBUG] SceneManager._enterScene('level5', 'level5_scn001') -> scene:entered akan dipancarkan
+[1785952267629] [FLOW] 🏔 SCENE.ENTERED 'level5_scn001' (type='narration')
+[1785952267629] [DEBUG] UIManager._onSceneEntered -> sceneType='narration', levelId='level5'
+[1785952267629] [SVARAVITA][INFO][SceneManager] Scene aktif sekarang: "level5_scn001" (level "level5", tipe "narration").
+[1785952267681] [DEBUG] SceneManager.loadScene('level5', 'level5_scn002') DIPANGGIL
+[1785952267681] [DEBUG] SceneManager.loadScene -> sceneData untuk 'level5_scn002': DITEMUKAN
+[1785952267681] [SVARAVITA][INFO][AssetLoader] Mulai preload "level5_scn002" (2 asset unik).
+[1785952267682] [SVARAVITA][INFO][AssetLoader] "level5_scn002" selesai — 2/2 asset sukses.
+[1785952267682] [DEBUG] SceneManager._enterScene('level5', 'level5_scn002') -> scene:entered akan dipancarkan
+[1785952267682] [FLOW] 🏔 SCENE.ENTERED 'level5_scn002' (type='dialogue')
+[1785952267682] [DEBUG] UIManager._onSceneEntered -> sceneType='dialogue', levelId='level5'
+[1785952267682] [SVARAVITA][INFO][SceneManager] Scene aktif sekarang: "level5_scn002" (level "level5", tipe "dialogue").
+[1785952267734] [DEBUG] SceneManager.loadScene('level5', 'level5_scn003') DIPANGGIL
+[1785952267734] [DEBUG] SceneManager.loadScene -> sceneData untuk 'level5_scn003': DITEMUKAN
+[1785952267734] [SVARAVITA][INFO][AssetLoader] Mulai preload "level5_scn003" (2 asset unik).
+[1785952267734] [SVARAVITA][INFO][AssetLoader] "level5_scn003" selesai — 2/2 asset sukses.
+[1785952267734] [DEBUG] SceneManager._enterScene('level5', 'level5_scn003') -> scene:entered akan dipancarkan
+[1785952267734] [FLOW] 🏔 SCENE.ENTERED 'level5_scn003' (type='dialogue')
+[1785952267734] [DEBUG] UIManager._onSceneEntered -> sceneType='dialogue', levelId='level5'
+[1785952267735] [SVARAVITA][INFO][SceneManager] Scene aktif sekarang: "level5_scn003" (level "level5", tipe "dialogue").
+[1785952267787] [DEBUG] SceneManager.loadScene('level5', 'level5_scn004') DIPANGGIL
+[1785952267787] [DEBUG] SceneManager.loadScene -> sceneData untuk 'level5_scn004': DITEMUKAN
+[1785952267787] [SVARAVITA][INFO][AssetLoader] Mulai preload "level5_scn004" (2 asset unik).
+[1785952267787] [SVARAVITA][INFO][AssetLoader] "level5_scn004" selesai — 2/2 asset sukses.
+[1785952267787] [DEBUG] SceneManager._enterScene('level5', 'level5_scn004') -> scene:entered akan dipancarkan
+[1785952267787] [FLOW] 🏔 SCENE.ENTERED 'level5_scn004' (type='narration')
+[1785952267787] [DEBUG] UIManager._onSceneEntered -> sceneType='narration', levelId='level5'
+[1785952267787] [SVARAVITA][INFO][SceneManager] Scene aktif sekarang: "level5_scn004" (level "level5", tipe "narration").
+[1785952267841] [DEBUG] SceneManager.loadScene('level5', 'level5_scn005') DIPANGGIL
+[1785952267841] [DEBUG] SceneManager.loadScene -> sceneData untuk 'level5_scn005': DITEMUKAN
+[1785952267841] [SVARAVITA][INFO][AssetLoader] Mulai preload "level5_scn005" (20 asset unik).
+[1785952267847] [SVARAVITA][INFO][AssetLoader] "level5_scn005" selesai — 20/20 asset sukses.
+[1785952267847] [DEBUG] SceneManager._enterScene('level5', 'level5_scn005') -> scene:entered akan dipancarkan
+[1785952267847] [FLOW] 🏔 SCENE.ENTERED 'level5_scn005' (type='quiz')
+[1785952267847] [DEBUG] UIManager._onSceneEntered -> sceneType='quiz', levelId='level5'
+[1785952267848] [FLOW] 📝 QUESTION_STARTED idx=0/4
+[1785952267848] [SVARAVITA][INFO][SceneManager] Scene aktif sekarang: "level5_scn005" (level "level5", tipe "quiz").
+[1785952269126] [FLOW] 👆 EMIT gesture:selectRightIntent
+[1785952269126] [FLOW] ✔ CHOICE.SELECTED diterima engine (side='right')
+[1785952269126] [FLOW] 🎯 jawaban right -> SALAH +0 poin
+[1785952269178] [FLOW] 📝 QUESTION_STARTED idx=1/4
+[1785952270730] [FLOW] 👆 EMIT gesture:selectLeftIntent
+[1785952270730] [FLOW] ✔ CHOICE.SELECTED diterima engine (side='left')
+[1785952270730] [FLOW] 🎯 jawaban left -> BENAR +10 poin
+[1785952270782] [FLOW] 📝 QUESTION_STARTED idx=2/4
+[1785952272334] [FLOW] 👆 EMIT gesture:selectRightIntent
+[1785952272334] [FLOW] ✔ CHOICE.SELECTED diterima engine (side='right')
+[1785952272334] [FLOW] 🎯 jawaban right -> BENAR +10 poin
+[1785952272385] [FLOW] 📝 QUESTION_STARTED idx=3/4
+[1785952273939] [FLOW] 👆 EMIT gesture:selectLeftIntent
+[1785952273939] [FLOW] ✔ CHOICE.SELECTED diterima engine (side='left')
+[1785952273939] [FLOW] 🎯 jawaban left -> SALAH +0 poin
+[1785952273991] [FLOW] 🏁 QUIZ.COMPLETED (benar=2/4)
+[1785952273991] [DEBUG] SceneManager.loadScene('level5', 'level5_scn006') DIPANGGIL
+[1785952273991] [DEBUG] SceneManager.loadScene -> sceneData untuk 'level5_scn006': DITEMUKAN
+[1785952273991] [SVARAVITA][INFO][AssetLoader] Mulai preload "level5_scn006" (2 asset unik).
+[1785952273992] [SVARAVITA][INFO][AssetLoader] "level5_scn006" selesai — 2/2 asset sukses.
+[1785952273992] [DEBUG] SceneManager._enterScene('level5', 'level5_scn006') -> scene:entered akan dipancarkan
+[1785952273992] [FLOW] 🏔 SCENE.ENTERED 'level5_scn006' (type='ending')
+[1785952273992] [DEBUG] UIManager._onSceneEntered -> sceneType='ending', levelId='level5'
+[1785952273993] [SVARAVITA][INFO][SceneManager] Scene aktif sekarang: "level5_scn006" (level "level5", tipe "ending").
+[1785952357051] [FLOW] ===== TIMEOUT 120 detik — hentikan harness =====
+[1785952357051] 
+[FLOW] ===== AKHIR DARI RUN (event loop sudah kosong) =====
+[1785952357051] [FLOW] Total baris log: 407

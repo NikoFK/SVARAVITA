@@ -1,0 +1,392 @@
+{
+  "levelId": "level1",
+  "bloomLevel": "C1",
+  "displayTitle": "Level 1 – Pengetahuan",
+  "scenes": [
+    {
+      "id": "level1_scn001",
+      "type": "narration",
+      "background": "level1_scn001",
+      "nextScene": "level1_scn002",
+      "lines": [
+        {
+          "id": "level1_scn001_L01",
+          "speaker": "narrator",
+          "text": "Pagi yang cerah menyelimuti Kota Surabaya dengan suasana yang segar dan penuh semangat. Hari ini, kawasan kota dipenuhi oleh antusiasme masyarakat dalam mengikuti kegiatan Car Free Day Di Taman Bungkul. Berbagai kalangan, mulai dari anak-anak hingga orang dewasa, tampak memadati jalanan untuk berolahraga, berjalan santai, maupun menghabiskan waktu bersama keluarga dan teman-teman.",
+          "audio": null,
+          "animation": null
+        }
+      ]
+    },
+    {
+      "id": "level1_scn002",
+      "type": "dialogue",
+      "background": "level1_scn002",
+      "nextScene": "level1_scn003",
+      "lines": [
+        {
+          "id": "level1_scn002_L01",
+          "speaker": "vara",
+          "text": "Halo, Zea! Sudah siap belum? Jangan sampai aku nunggu lama ya.",
+          "audio": null,
+          "animation": null
+        },
+        {
+          "id": "level1_scn002_L02",
+          "speaker": "zea",
+          "text": "Tenang aja, aku sudah siap. Kita ketemu di pintu masuk Taman Bungkul, ya.",
+          "audio": null,
+          "animation": null
+        },
+        {
+          "id": "level1_scn002_L03",
+          "speaker": "vara",
+          "text": "okee! Sampai ketemu.",
+          "audio": null,
+          "animation": null
+        }
+      ]
+    },
+    {
+      "id": "level1_scn003",
+      "type": "dialogue",
+      "background": "level1_scn003",
+      "nextScene": "level1_scn004",
+      "lines": [
+        {
+          "id": "level1_scn003_L00",
+          "speaker": "narrator",
+          "text": "Tak lama kemudian, mereka pun bertemu di Taman Bungkul dan menikmati semarak suasana Car Free Day. Sambil berjalan santai dan berolahraga, mereka larut dalam keceriaan pagi yang menyegarkan. Setelah cukup lama beraktivitas, perut Vara mulai terasa lapar dan keroncongan.",
+          "audio": null,
+          "animation": null
+        },
+        {
+          "id": "level1_scn003_L01",
+          "speaker": "vara",
+          "text": "Zea, kamu sudah sarapan belum?",
+          "audio": null,
+          "animation": null
+        },
+        {
+          "id": "level1_scn003_L02",
+          "speaker": "zea",
+          "text": "Belum nih. Kamu juga belum, ya?",
+          "audio": null,
+          "animation": null
+        },
+        {
+          "id": "level1_scn003_L03",
+          "speaker": "vara",
+          "text": "Iya, belum. Perutku sudah keroncongan banget. Yuk, kita cari makan!",
+          "audio": null,
+          "animation": null
+        },
+        {
+          "id": "level1_scn003_L04",
+          "speaker": "zea",
+          "text": "Hehe, sama! Ayo, aku juga sudah lapar.",
+          "audio": null,
+          "animation": null
+        },
+        {
+          "id": "level1_scn003_L05",
+          "speaker": "narrator",
+          "text": "Tanpa berpikir panjang, Vara bergegas menghampiri penjual dan segera membeli sosis bakar, kentang goreng serta minuman manis bersoda yang tampak begitu menggoda. Aroma yang menguar dan tampilannya yang menggiurkan membuat Vara tak sabar untuk segera menikmatinya. Wajahnya berbinar penuh antusias, seolah melupakan hal lain di sekitarnya.",
+          "audio": null,
+          "animation": null
+        },
+        {
+          "id": "level1_scn003_L06",
+          "speaker": "narrator",
+          "text": "Namun, di balik keceriaan itu, Zea yang sedari tadi memperhatikan hanya bisa tertegun. Raut wajahnya berubah, menunjukkan keterkejutan sekaligus kekhawatiran. Dengan langkah cepat dan nada suara yang sedikit meninggi, Zea pun menegur Vara, berusaha mengingatkannya akan pentingnya memilih makanan yang lebih sehat bagi tubuh.",
+          "audio": null,
+          "animation": null
+        }
+      ]
+    },
+    {
+      "id": "level1_scn004",
+      "type": "dialogue",
+      "background": "level1_scn004",
+      "nextScene": "level1_scn005",
+      "lines": [
+        {
+          "id": "level1_scn004_L01",
+          "speaker": "zea",
+          "text": "Var, kamu yakin sama makanan kamu beli itu?",
+          "audio": null,
+          "animation": null
+        },
+        {
+          "id": "level1_scn004_L02",
+          "speaker": "vara",
+          "text": "Yakin dong. Buatku yang penting enak, kenyang, dan bikin happy.",
+          "audio": null,
+          "animation": null
+        },
+        {
+          "id": "level1_scn004_L03",
+          "speaker": "zea",
+          "text": "Tapi tubuh kita nggak cuma butuh enak dan kenyang. kamu udah cek belum itu sehat atau nggak?",
+          "audio": null,
+          "animation": null
+        },
+        {
+          "id": "level1_scn004_L04",
+          "speaker": "vara",
+          "text": "Hehe... jujur aja belum sih. Yang penting rasanya dulu!. Memangnya, apa saja sih zat gizi yang dibutuhkan oleh tubuh kita?",
+          "audio": null,
+          "animation": null
+        },
+        {
+          "id": "level1_scn004_L05",
+          "speaker": "zea",
+          "text": "Pertanyaan yang bagus! Supaya lebih jelas dan mudah dipahami, yuk kita dengar penjelasan dari ahli gizi.",
+          "audio": null,
+          "animation": null
+        }
+      ]
+    },
+    {
+      "id": "level1_scn005",
+      "type": "narration",
+      "background": "level1_scn005",
+      "nextScene": "level1_scn006",
+      "lines": [
+        {
+          "id": "level1_scn005_L01",
+          "speaker": "expert",
+          "text": "Halo, Sahabat sehat! Saya seorang ahli gizi, dan hari ini kita akan belajar bersama tentang pentingnya zat gizi bagi tubuh kita.",
+          "audio": null,
+          "animation": null
+        },
+        {
+          "id": "level1_scn005_L02",
+          "speaker": "expert",
+          "text": "Tubuh kita membutuhkan berbagai jenis zat gizi agar dapat berfungsi dengan baik. Secara umum, zat gizi dibagi menjadi dua, yaitu zat gizi makro dan zat gizi mikro. Zat gizi makro terdiri dari karbohidrat, protein, dan lemak. Karbohidrat berfungsi sebagai sumber energi utama, protein berperan dalam membangun dan memperbaiki jaringan tubuh, sedangkan lemak berfungsi sebagai cadangan energi dan melindungi organ tubuh. Selain itu, ada juga zat gizi mikro seperti vitamin dan mineral yang membantu menjaga daya tahan tubuh dan mendukung berbagai proses dalam tubuh.",
+          "audio": null,
+          "animation": null
+        },
+        {
+          "id": "level1_scn005_L03",
+          "speaker": "expert",
+          "text": "Kita dapat memperoleh zat gizi tersebut dari berbagai makanan sehari-hari. Contoh sumber karbohidrat antara lain nasi, roti, mie, kentang, dan jagung. Sumber protein bisa berasal dari hewani seperti telur, ikan, ayam, dan susu, maupun nabati seperti tempe dan tahu. Sedangkan lemak dapat diperoleh dari minyak, mentega, santan, kacang-kacangan, dan alpukat.",
+          "audio": null,
+          "animation": null
+        },
+        {
+          "id": "level1_scn005_L04",
+          "speaker": "expert",
+          "text": "Namun, kita juga perlu berhati-hati terhadap makanan yang mengandung gula, garam, dan lemak tinggi. Contohnya adalah minuman bersoda, teh manis, permen, dan kue yang tinggi gula; makanan instan, keripik, dan makanan cepat saji yang tinggi garam; serta gorengan, makanan bersantan, dan fast food seperti burger dan kentang goreng yang tinggi lemak. Jika dikonsumsi berlebihan, makanan tersebut dapat berdampak buruk bagi kesehatan.",
+          "audio": null,
+          "animation": null
+        },
+        {
+          "id": "level1_scn005_L05",
+          "speaker": "expert",
+          "text": "Selain itu, ada juga makanan yang disebut makanan ultra proses, yaitu makanan yang telah melalui banyak tahapan pengolahan dan biasanya mengandung tambahan gula, garam, lemak, serta bahan pengawet. Contohnya seperti sosis, nugget, mie instan, snack kemasan, dan minuman kemasan. Makanan ini umumnya rendah serat dan kurang baik jika sering dikonsumsi.",
+          "audio": null,
+          "animation": null
+        },
+        {
+          "id": "level1_scn005_L06",
+          "speaker": "expert",
+          "text": "Kebiasaan makan yang tidak sehat dapat meningkatkan risiko penyakit tidak menular, terutama pada remaja. Beberapa contoh penyakit tidak menular antara lain obesitas, diabetes melitus, dan hipertensi. Oleh karena itu, penting bagi kita untuk mulai memilih makanan yang bergizi seimbang, membatasi konsumsi gula, garam, dan lemak, serta memperbanyak konsumsi buah dan sayur agar tubuh tetap sehat dan terhindar dari penyakit.",
+          "audio": null,
+          "animation": null
+        }
+      ]
+    },
+    {
+      "id": "level1_scn006",
+      "type": "dialogue",
+      "background": "level1_scn005",
+      "nextScene": "level1_scn007",
+      "lines": [
+        {
+          "id": "level1_scn006_L01",
+          "speaker": "vara",
+          "text": "Wah, ternyata penting banget ya memilih makanan.",
+          "audio": null,
+          "animation": null
+        },
+        {
+          "id": "level1_scn006_L02",
+          "speaker": "zea",
+          "text": "Iya, bukan cuma enak, tapi juga harus bergizi.",
+          "audio": null,
+          "animation": null
+        },
+        {
+          "id": "level1_scn006_L03",
+          "speaker": "vara",
+          "text": "Berarti aku harus mulai lebih hati-hati, ya?",
+          "audio": null,
+          "animation": null
+        },
+        {
+          "id": "level1_scn006_L04",
+          "speaker": "zea",
+          "text": "Betul! Yuk, kita pilih makanan yang lebih sehat.",
+          "audio": null,
+          "animation": null
+        },
+        {
+          "id": "level1_scn006_L05",
+          "speaker": "vara",
+          "text": "Siap! Biar tetap enak dan menyehatkan.",
+          "audio": null,
+          "animation": null
+        }
+      ]
+    },
+    {
+      "id": "level1_scn007",
+      "type": "narration",
+      "background": "level1_scn007",
+      "nextScene": "level1_scn008",
+      "lines": [
+        {
+          "id": "level1_scn007_L01",
+          "speaker": "narrator",
+          "text": "Sekarang Vara dan Zea sudah mengenal berbagai jenis zat gizi yang dibutuhkan tubuh. Apakah kamu siap membantu mereka? Dengarkan baik-baik, lalu pilih jawaban yang paling tepat untuk menyelesaikan tantangan seru ini!",
+          "audio": null,
+          "animation": null
+        }
+      ]
+    },
+    {
+      "id": "level1_scn008",
+      "type": "quiz",
+      "background": "level1_scn007",
+      "nextScene": "level1_scn009",
+      "questions": [
+        {
+          "id": "level1_scn008_q01",
+          "questionText": "Tubuh manusia memerlukan berbagai zat gizi agar dapat berfungsi dengan baik, termasuk untuk menghasilkan energi, membangun jaringan, dan melindungi organ. Zat gizi yang termasuk dalam kelompok zat gizi makro adalah…",
+          "questionAudio": null,
+          "choiceLeft": {
+            "text": "Vitamin dan mineral",
+            "audio": null
+          },
+          "choiceRight": {
+            "text": "Karbohidrat, protein, dan lemak",
+            "audio": null
+          },
+          "correctAnswer": "right",
+          "feedbackCorrect": {
+            "text": "Benar! Karbohidrat, protein, dan lemak adalah zat gizi makro.",
+            "audio": null
+          },
+          "feedbackWrong": {
+            "text": "Belum tepat. Zat gizi makro adalah karbohidrat, protein, dan lemak.",
+            "audio": null
+          }
+        },
+        {
+          "id": "level1_scn008_q02",
+          "questionText": "Saat sarapan, Rina mengonsumsi nasi, telur, dan sayur. Nasi yang dikonsumsi Rina berperan sebagai sumber energi utama bagi tubuh. Berdasarkan hal tersebut, nasi termasuk dalam kelompok makanan sumber…",
+          "questionAudio": null,
+          "choiceLeft": {
+            "text": "Karbohidrat",
+            "audio": null
+          },
+          "choiceRight": {
+            "text": "Protein",
+            "audio": null
+          },
+          "correctAnswer": "left",
+          "feedbackCorrect": {
+            "text": "Tepat! Nasi adalah sumber karbohidrat utama.",
+            "audio": null
+          },
+          "feedbackWrong": {
+            "text": "Belum tepat. Nasi termasuk sumber karbohidrat, bukan protein.",
+            "audio": null
+          }
+        },
+        {
+          "id": "level1_scn008_q03",
+          "questionText": "Beberapa minuman terlihat sehat, tetapi ada yang mengandung banyak gula tambahan. Minuman yang tinggi gula adalah….",
+          "questionAudio": null,
+          "choiceLeft": {
+            "text": "Smoothie buah dengan sirup dan yogurt rasa",
+            "audio": null
+          },
+          "choiceRight": {
+            "text": "Jus buah tanpa tambahan gula",
+            "audio": null
+          },
+          "correctAnswer": "left",
+          "feedbackCorrect": {
+            "text": "Benar! Sirup dan yogurt rasa menambah kadar gula cukup tinggi.",
+            "audio": null
+          },
+          "feedbackWrong": {
+            "text": "Belum tepat. Smoothie dengan sirup dan yogurt rasa justru tinggi gula tambahan.",
+            "audio": null
+          }
+        },
+        {
+          "id": "level1_scn008_q04",
+          "questionText": "Saat ini banyak remaja menyukai makanan praktis yang mudah disiapkan dan dikonsumsi. Beberapa di antaranya telah melalui berbagai tahapan pengolahan serta mengandung bahan tambahan seperti pengawet, gula, garam, dan lemak. Contoh makanan yang termasuk kategori makanan ultra proses adalah…",
+          "questionAudio": null,
+          "choiceLeft": {
+            "text": "Nugget dan mie instan",
+            "audio": null
+          },
+          "choiceRight": {
+            "text": "Sandwich isi telur  dan keju",
+            "audio": null
+          },
+          "correctAnswer": "left",
+          "feedbackCorrect": {
+            "text": "Tepat! Nugget dan mie instan adalah contoh makanan ultra proses.",
+            "audio": null
+          },
+          "feedbackWrong": {
+            "text": "Belum tepat. Nugget dan mie instan yang termasuk makanan ultra proses.",
+            "audio": null
+          }
+        },
+        {
+          "id": "level1_scn008_q05",
+          "questionText": "Pola makan yang tidak sehat, seperti sering mengonsumsi makanan tinggi gula, garam, dan lemak, dapat meningkatkan risiko berbagai gangguan kesehatan pada remaja. Beberapa penyakit dapat muncul akibat kebiasaan tersebut, baik yang menular maupun tidak menular. Berdasarkan hal tersebut, manakah yang termasuk penyakit tidak menular?",
+          "questionAudio": null,
+          "choiceLeft": {
+            "text": "Diabetes dan hipertensi",
+            "audio": null
+          },
+          "choiceRight": {
+            "text": "Asma dan influenza",
+            "audio": null
+          },
+          "correctAnswer": "left",
+          "feedbackCorrect": {
+            "text": "Benar! Diabetes dan hipertensi termasuk penyakit tidak menular.",
+            "audio": null
+          },
+          "feedbackWrong": {
+            "text": "Belum tepat. Diabetes dan hipertensi yang termasuk penyakit tidak menular.",
+            "audio": null
+          }
+        }
+      ]
+    },
+    {
+      "id": "level1_scn009",
+      "type": "level_unlock",
+      "background": "level1_scn009",
+      "nextScene": "level2_scn001",
+      "lines": [
+        {
+          "id": "level1_scn009_L01",
+          "speaker": "narrator",
+          "text": "Selamat! Kamu sudah menyelesaikan Level 1 — Pengetahuan. Vara dan Zea kini lebih memahami zat gizi yang dibutuhkan tubuh. Level 2 terbuka!",
+          "audio": null,
+          "animation": null
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,312 @@
+{
+  "levelId": "level4",
+  "bloomLevel": "C4",
+  "displayTitle": "Level 4 – Menganalisis",
+  "scenes": [
+    {
+      "id": "level4_scn001",
+      "type": "narration",
+      "background": "level4_scn001",
+      "nextScene": "level4_scn002",
+      "lines": [
+        {
+          "id": "level4_scn001_L01",
+          "speaker": "narrator",
+          "text": "Setelah beberapa hari mencoba menerapkan pola makan yang lebih sehat, Vara dan Zea memutuskan untuk mampir ke UKS. Di sana, mereka melihat seorang teman yang sedang berbaring lemas. Wajahnya pucat, dan ia mengeluh pusing serta sakit perut akibat diare. Saat ditanya oleh Vara, temannya mengaku bahwa sebelumnya ia baru saja mencoba makanan kekinian dengan tingkat kepedasan level lima. Tak lama setelah itu, perutnya mulai terasa tidak nyaman hingga akhirnya mengalami diare.",
+          "audio": null,
+          "animation": null
+        }
+      ]
+    },
+    {
+      "id": "level4_scn002",
+      "type": "dialogue",
+      "background": "level4_scn002",
+      "nextScene": "level4_scn003",
+      "lines": [
+        {
+          "id": "level4_scn002_L01",
+          "speaker": "zea",
+          "text": "Eh, var… kamu udah dengar belum? Katanya sekarang penyakit tidak menular mulai banyak terjadi juga di remaja, lho.",
+          "audio": null,
+          "animation": null
+        },
+        {
+          "id": "level4_scn002_L02",
+          "speaker": "vara",
+          "text": "Hah, serius? Aku belum dengar tuh. Kamu tahu dari mana, Zea?",
+          "audio": null,
+          "animation": null
+        },
+        {
+          "id": "level4_scn002_L03",
+          "speaker": "zea",
+          "text": "Aku tadi dengar dari berita. Coba deh kamu kamu simak!…",
+          "audio": null,
+          "animation": null
+        },
+        {
+          "id": "level4_scn002_L04",
+          "speaker": "zea",
+          "text": "Pemerintah Kota Surabaya mencatat 112.893 kasus diabetes melitus pada 2025, menjadikannya penyakit terbanyak kedua setelah hipertensi (248.193 kasus). Salah satu faktor risiko utama kedua penyakit tersebut adalah obesitas (prevalensi 13,48% pada penduduk usia ≥15 tahun), yang dipicu oleh konsumsi makanan dan minuman tinggi gula, garam, dan lemak (GGL), terutama makanan siap saji dan jajanan anak. Pola konsumsi GGL sejak dini dapat meningkatkan risiko obesitas, diabetes, dan hipertensi di usia produktif.",
+          "audio": null,
+          "animation": null
+        },
+        {
+          "id": "level4_scn002_L05",
+          "speaker": "zea",
+          "text": "Untuk menekan angka Penyakit Tidak Menular (PTM), Pemkot Surabaya menerbitkan Surat Edaran tentang Pembatasan GGL, yang mengatur batas konsumsi gula maksimal 4 sendok makan, garam 1 sendok teh, dan lemak/minyak 5 sendok makan per orang per hari. Kebijakan ini juga membatasi penjualan makanan dan minuman tinggi GGL di sekolah, perkantoran, dan fasilitas umum, serta mendorong penyediaan menu sehat. Selain itu, sekolah diminta mengelola kantin sehat, membatasi minuman manis dan makanan instan, serta membiasakan konsumsi air putih, buah, dan sayur. Pemerintah juga melakukan edukasi kepada masyarakat, sekolah, dan UMKM mengenai pembatasan GGL, perilaku hidup bersih dan sehat (PHBS), serta pentingnya informasi label gizi",
+          "audio": null,
+          "animation": null
+        }
+      ]
+    },
+    {
+      "id": "level4_scn003",
+      "type": "dialogue",
+      "background": "level4_scn002",
+      "nextScene": "level4_scn004",
+      "lines": [
+        {
+          "id": "level4_scn003_L01",
+          "speaker": "vara",
+          "text": "Wah… ternyata serius juga ya dampaknya. Tapi kalau dipikir-pikir, kebiasaan kita sehari-hari memang banyak yang kayak gitu…",
+          "audio": null,
+          "animation": null
+        },
+        {
+          "id": "level4_scn003_L02",
+          "speaker": "zea",
+          "text": "Iya… coba kita lihat dari kasus teman kita ini. Dia tadi makan makanan super pedas, terus langsung sakit perut.",
+          "audio": null,
+          "animation": null
+        },
+        {
+          "id": "level4_scn003_L03",
+          "speaker": "vara",
+          "text": "Berarti bukan cuma soal pedasnya ya, tapi juga cara kita memilih makanan. Bisa jadi makanannya kurang aman atau terlalu berlebihan.",
+          "audio": null,
+          "animation": null
+        },
+        {
+          "id": "level4_scn003_L04",
+          "speaker": "zea",
+          "text": "Benar. Kalau dilihat dari gizinya juga, makanan seperti itu biasanya cuma fokus ke rasa—pedas, gurih—tapi kurang memperhatikan keseimbangan zat gizi.",
+          "audio": null,
+          "animation": null
+        },
+        {
+          "id": "level4_scn003_L05",
+          "speaker": "vara",
+          "text": "Iya, biasanya tinggi lemak atau garam, tapi hampir nggak ada vitamin atau mineralnya.",
+          "audio": null,
+          "animation": null
+        }
+      ]
+    },
+    {
+      "id": "level4_scn004",
+      "type": "dialogue",
+      "background": "level4_scn002",
+      "nextScene": "level4_scn005",
+      "lines": [
+        {
+          "id": "level4_scn004_L01",
+          "speaker": "zea",
+          "text": "Kalau kebiasaan seperti ini terus dilakukan, apalagi ditambah minuman manis, risikonya bisa lebih besar ya…",
+          "audio": null,
+          "animation": null
+        },
+        {
+          "id": "level4_scn004_L02",
+          "speaker": "vara",
+          "text": "Betul. Dari berita tadi juga jelas, konsumsi gula, garam, dan lemak berlebih bisa memicu obesitas, diabetes, bahkan hipertensi.",
+          "audio": null,
+          "animation": null
+        },
+        {
+          "id": "level4_scn004_L03",
+          "speaker": "zea",
+          "text": "Dan yang lebih mengkhawatirkan, sekarang remaja juga mulai banyak yang kena…",
+          "audio": null,
+          "animation": null
+        },
+        {
+          "id": "level4_scn004_L04",
+          "speaker": "vara",
+          "text": "Menurutmu, kenapa sih banyak remaja masih sering makan seperti itu?",
+          "audio": null,
+          "animation": null
+        },
+        {
+          "id": "level4_scn004_L05",
+          "speaker": "zea",
+          "text": "Mungkin karena:\n* makanan kekinian itu menarik dan viral\n* rasanya enak dan bikin nagih\n* gampang dibeli di mana-mana\n* dan kadang kita nggak terlalu mikirin dampaknya",
+          "audio": null,
+          "animation": null
+        },
+        {
+          "id": "level4_scn004_L06",
+          "speaker": "vara",
+          "text": "Iya, faktor kebiasaan dan lingkungan juga pengaruh banget.",
+          "audio": null,
+          "animation": null
+        },
+        {
+          "id": "level4_scn004_L07",
+          "speaker": "zea",
+          "text": "Kalau begitu, kita harus mulai ubah kebiasaan ya…",
+          "audio": null,
+          "animation": null
+        },
+        {
+          "id": "level4_scn004_L08",
+          "speaker": "vara",
+          "text": "Iya, tapi nggak harus langsung drastis. Bisa mulai dari:\n* mengurangi makanan terlalu pedas, manis, dan berminyak\n* memilih menu yang lebih seimbang\n* dan memperbanyak air putih, buah, serta sayur",
+          "audio": null,
+          "animation": null
+        },
+        {
+          "id": "level4_scn004_L09",
+          "speaker": "vara",
+          "text": "Jadi intinya bukan cuma ikut tren, tapi juga harus pikirin dampaknya buat tubuh kita.",
+          "audio": null,
+          "animation": null
+        },
+        {
+          "id": "level4_scn004_L10",
+          "speaker": "zea",
+          "text": "Betul. Karena kesehatan kita ditentukan dari pilihan kita setiap hari.",
+          "audio": null,
+          "animation": null
+        }
+      ]
+    },
+    {
+      "id": "level4_scn005",
+      "type": "narration",
+      "background": "level4_scn002",
+      "nextScene": "level4_scn006",
+      "lines": [
+        {
+          "id": "level4_scn005_L01",
+          "speaker": "narrator",
+          "text": "Dari kejadian sederhana di UKS, Vara dan Zea mulai memahami bahwa setiap kebiasaan makan memiliki dampak bagi tubuh. Bukan hanya tentang rasa, tetapi juga tentang keseimbangan dan kesehatan jangka panjang. .",
+          "audio": null,
+          "animation": null
+        }
+      ]
+    },
+    {
+      "id": "level4_scn006",
+      "type": "quiz",
+      "background": "level4_scn002",
+      "nextScene": "level4_scn007",
+      "questions": [
+        {
+          "id": "level4_scn006_q01",
+          "questionText": "Seorang siswa terbiasa sarapan dengan mi instan dan segelas teh manis karena praktis dan rasanya disukai. Namun, ia sering merasa lapar kembali sebelum waktu istirahat berikutnya. Pernyataan yang paling tepat untuk menjelaskan kondisi tersebut adalah ....",
+          "questionAudio": null,
+          "choiceLeft": {
+            "text": "Menu tersebut sudah memenuhi kebutuhan gizi karena mengandung karbohidrat sebagai sumber energi utama.",
+            "audio": null
+          },
+          "choiceRight": {
+            "text": "Menu tersebut kurang memenuhi prinsip gizi seimbang karena rendah protein, vitamin, dan mineral sehingga rasa kenyang tidak bertahan lama dan energi tubuh kurang stabil.",
+            "audio": null
+          },
+          "correctAnswer": "right",
+          "feedbackCorrect": {
+            "text": "Benar! Menu itu rendah protein, vitamin, dan mineral sehingga rasa kenyang tidak bertahan lama.",
+            "audio": null
+          },
+          "feedbackWrong": {
+            "text": "Belum tepat. Menu itu kurang seimbang karena rendah protein, vitamin, dan mineral.",
+            "audio": null
+          }
+        },
+        {
+          "id": "level4_scn006_q02",
+          "questionText": "Seorang remaja hampir setiap hari mengonsumsi minuman manis, gorengan, dan makanan cepat saji, serta jarang makan buah dan sayur. Meskipun belum merasakan keluhan, kebiasaan tersebut dilakukan dalam waktu yang lama. Pernyataan yang paling tepat adalah ....",
+          "questionAudio": null,
+          "choiceLeft": {
+            "text": "Kebiasaan tersebut tidak berbahaya selama belum menimbulkan gejala.",
+            "audio": null
+          },
+          "choiceRight": {
+            "text": "Kebiasaan tersebut dapat meningkatkan risiko penyakit tidak menular akibat tingginya asupan gula, garam, dan lemak.",
+            "audio": null
+          },
+          "correctAnswer": "right",
+          "feedbackCorrect": {
+            "text": "Benar! Risiko penyakit tidak menular tetap meningkat meski belum ada gejala.",
+            "audio": null
+          },
+          "feedbackWrong": {
+            "text": "Belum tepat. Belum ada gejala bukan berarti tidak ada risiko jangka panjang.",
+            "audio": null
+          }
+        },
+        {
+          "id": "level4_scn006_q03",
+          "questionText": "Seorang siswa sering melewatkan sarapan, makan siang dalam porsi besar, dan jarang mengonsumsi buah serta sayur. Kebiasaan ini dilakukan hampir setiap hari. Pernyataan yang paling tepat adalah ....",
+          "questionAudio": null,
+          "choiceLeft": {
+            "text": "Kebutuhan gizi tetap terpenuhi jika porsi makan cukup banyak.",
+            "audio": null
+          },
+          "choiceRight": {
+            "text": "Pola makan tersebut tidak seimbang dan dapat meningkatkan risiko obesitas serta gangguan metabolisme.",
+            "audio": null
+          },
+          "correctAnswer": "right",
+          "feedbackCorrect": {
+            "text": "Benar! Porsi besar tanpa keseimbangan gizi tetap berisiko.",
+            "audio": null
+          },
+          "feedbackWrong": {
+            "text": "Belum tepat. Porsi besar tidak menjamin gizi seimbang.",
+            "audio": null
+          }
+        },
+        {
+          "id": "level4_scn006_q04",
+          "questionText": "Seorang remaja sering mengonsumsi makanan instan dan minuman manis. Ia ingin menerapkan pola makan yang lebih sehat, tetapi merasa sulit jika harus mengubah semua kebiasaannya sekaligus. Langkah yang paling tepat adalah ....",
+          "questionAudio": null,
+          "choiceLeft": {
+            "text": "Mengurangi konsumsi makanan tinggi gula, garam, dan lemak secara bertahap serta mulai memilih menu bergizi seimbang.",
+            "audio": null
+          },
+          "choiceRight": {
+            "text": "Menghentikan semua makanan favorit secara langsung tanpa mempertimbangkan kebiasaan sehari-hari.",
+            "audio": null
+          },
+          "correctAnswer": "left",
+          "feedbackCorrect": {
+            "text": "Benar! Perubahan bertahap lebih realistis dan mudah dipertahankan.",
+            "audio": null
+          },
+          "feedbackWrong": {
+            "text": "Belum tepat. Perubahan drastis sulit dipertahankan jangka panjang.",
+            "audio": null
+          }
+        }
+      ]
+    },
+    {
+      "id": "level4_scn007",
+      "type": "level_unlock",
+      "background": "level4_scn002",
+      "nextScene": "level5_scn001",
+      "lines": [
+        {
+          "id": "level4_scn007_L01",
+          "speaker": "narrator",
+          "text": "Vara dan Zea kini mampu menganalisis dampak kebiasaan makan terhadap kesehatan tubuh. Level 5 terbuka — tahap terakhir menanti.",
+          "audio": null,
+          "animation": null
+        }
+      ]
+    }
+  ]
+}

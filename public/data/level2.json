@@ -1,0 +1,305 @@
+{
+  "levelId": "level2",
+  "bloomLevel": "C2",
+  "displayTitle": "Level 2 – Memahami",
+  "scenes": [
+    {
+      "id": "level2_scn001",
+      "type": "narration",
+      "background": "level2_scn001",
+      "nextScene": "level2_scn002",
+      "lines": [
+        {
+          "id": "level2_scn001_L01",
+          "speaker": "narrator",
+          "text": "Usai menikmati semarak Car Free Day, Vara dan Zea pun melanjutkan perjalanan pulang dengan menaiki Surabaya Bus. Di dalam Surabaya Bus yang melaju perlahan, Vara dan Zea duduk berdampingan sambil menikmati perjalanan pulang. Suasana yang tenang membuat obrolan mereka terasa lebih hangat dan bermakna. Di antara deru kendaraan dan pemandangan kota yang berlalu, keduanya kembali membahas penjelasan dari ahli gizi. Percakapan ringan itu berubah menjadi refleksi sederhana, membuka pemahaman baru tentang pentingnya memilih makanan yang lebih sehat dalam kehidupan sehari-hari.",
+          "audio": null,
+          "animation": null
+        }
+      ]
+    },
+    {
+      "id": "level2_scn002",
+      "type": "dialogue",
+      "background": "level2_scn002",
+      "nextScene": "level2_scn003",
+      "lines": [
+        {
+          "id": "level2_scn002_L01",
+          "speaker": "zea",
+          "text": "Var, coba kita ingat-ingat lagi makanan yang kamu beli tadi  Menurutmu, kandungan gizinya seperti apa?",
+          "audio": null,
+          "animation": null
+        },
+        {
+          "id": "level2_scn002_L02",
+          "speaker": "vara",
+          "text": "Hmm… kalau dilihat dari tampilannya, kayaknya banyak lemak ya, soalnya digoreng. Terus rasanya juga asin dan gurih.",
+          "audio": null,
+          "animation": null
+        },
+        {
+          "id": "level2_scn002_L03",
+          "speaker": "zea",
+          "text": "Betul. Itu tandanya kemungkinan tinggi lemak dan garam. Nah, kalau minuman bersodanya?",
+          "audio": null,
+          "animation": null
+        },
+        {
+          "id": "level2_scn002_L04",
+          "speaker": "vara",
+          "text": "Pasti tinggi gula, sih. Soalnya manis banget.",
+          "audio": null,
+          "animation": null
+        },
+        {
+          "id": "level2_scn002_L05",
+          "speaker": "zea",
+          "text": "Ya, benar. Jadi dalam satu menu ini, kamu sudah dapat gula, garam, dan lemak dalam jumlah cukup tinggi. Menurutmu, kalau sering dikonsumsi, apa dampaknya?",
+          "audio": null,
+          "animation": null
+        },
+        {
+          "id": "level2_scn002_L06",
+          "speaker": "vara",
+          "text": "Mungkin… bisa bikin berat badan naik?",
+          "audio": null,
+          "animation": null
+        },
+        {
+          "id": "level2_scn002_L07",
+          "speaker": "zea",
+          "text": "Iya, itu salah satunya. Selain itu, konsumsi gula berlebihan bisa meningkatkan risiko diabetes, garam berlebih bisa memicu hipertensi, dan lemak berlebih bisa menyebabkan obesitas.",
+          "audio": null,
+          "animation": null
+        }
+      ]
+    },
+    {
+      "id": "level2_scn003",
+      "type": "dialogue",
+      "background": "level2_scn002",
+      "nextScene": "level2_scn004",
+      "lines": [
+        {
+          "id": "level2_scn003_L01",
+          "speaker": "vara",
+          "text": "Wah, ternyata dampaknya cukup serius ya.",
+          "audio": null,
+          "animation": null
+        },
+        {
+          "id": "level2_scn003_L02",
+          "speaker": "zea",
+          "text": "Iya, apalagi kalau dikonsumsi terus-menerus. Nah, makanan seperti nugget, sosis, atau mie instan tadi juga termasuk makanan ultra proses. Kamu tahu kenapa?",
+          "audio": null,
+          "animation": null
+        },
+        {
+          "id": "level2_scn003_L03",
+          "speaker": "vara",
+          "text": "Karena sudah banyak diolah dan ditambah macam-macam bahan, ya?",
+          "audio": null,
+          "animation": null
+        },
+        {
+          "id": "level2_scn003_L04",
+          "speaker": "zea",
+          "text": "Tepat! Biasanya makanan ultra proses mengandung tambahan gula, garam, lemak, dan bahan pengawet. Kalau dikonsumsi berlebihan, risikonya juga meningkat terhadap penyakit tidak menular.",
+          "audio": null,
+          "animation": null
+        },
+        {
+          "id": "level2_scn003_L05",
+          "speaker": "vara",
+          "text": "Berarti kalau aku sering makan makanan seperti ini, bisa meningkatkan risiko penyakit seperti diabetes atau hipertensi ya?",
+          "audio": null,
+          "animation": null
+        },
+        {
+          "id": "level2_scn003_L06",
+          "speaker": "zea",
+          "text": "Benar sekali. Itu sebabnya kita perlu memahami hubungan antara pola makan dan kesehatan tubuh.",
+          "audio": null,
+          "animation": null
+        },
+        {
+          "id": "level2_scn003_L07",
+          "speaker": "vara",
+          "text": "Jadi pola makan yang tidak sehat, seperti sering makan makanan tinggi gula, garam, lemak, dan ultra proses, bisa meningkatkan risiko penyakit tidak menular?",
+          "audio": null,
+          "animation": null
+        },
+        {
+          "id": "level2_scn003_L08",
+          "speaker": "zea",
+          "text": "Iya, kamu sudah paham! Sebaliknya, kalau kita makan makanan bergizi seimbang, tubuh kita jadi lebih sehat dan risiko penyakit bisa berkurang.",
+          "audio": null,
+          "animation": null
+        },
+        {
+          "id": "level2_scn003_L09",
+          "speaker": "vara",
+          "text": "Baik deh, mulai sekarang aku mau lebih memperhatikan apa yang aku makan.",
+          "audio": null,
+          "animation": null
+        },
+        {
+          "id": "level2_scn003_L10",
+          "speaker": "zea",
+          "text": "Bagus! Yang penting bukan langsung berubah drastis, tapi mulai dari kebiasaan kecil yang lebih sehat.",
+          "audio": null,
+          "animation": null
+        }
+      ]
+    },
+    {
+      "id": "level2_scn004",
+      "type": "narration",
+      "background": "level2_scn002",
+      "nextScene": "level2_scn005",
+      "lines": [
+        {
+          "id": "level2_scn004_L01",
+          "speaker": "narrator",
+          "text": "Kini Vara dan Zea sudah memahami kandungan gizi dalam makanan serta dampaknya bagi kesehatan tubuh. Yuk, bantu mereka memperdalam pemahaman tentang zat gizi melalui tantangan seru berikut! Dengarkan setiap pertanyaan dengan cermat, lalu pilih jawaban yang paling tepat.",
+          "audio": null,
+          "animation": null
+        }
+      ]
+    },
+    {
+      "id": "level2_scn005",
+      "type": "quiz",
+      "background": "level2_scn002",
+      "nextScene": "level2_scn006",
+      "questions": [
+        {
+          "id": "level2_scn005_q01",
+          "questionText": "Tubuh manusia membutuhkan berbagai zat gizi agar dapat menjalankan fungsi seperti bergerak, tumbuh, dan menjaga kesehatan. Berikut yang termasuk jenis zat gizi yang dibutuhkan tubuh adalah….",
+          "questionAudio": null,
+          "choiceLeft": {
+            "text": "Karbohidrat, protein, lemak, vitamin, dan mineral",
+            "audio": null
+          },
+          "choiceRight": {
+            "text": "Karbohidrat, protein, lemak, vitamin, dan pewarna makanan",
+            "audio": null
+          },
+          "correctAnswer": "left",
+          "feedbackCorrect": {
+            "text": "Benar! Kelima zat gizi itu yang dibutuhkan tubuh.",
+            "audio": null
+          },
+          "feedbackWrong": {
+            "text": "Belum tepat. Pewarna makanan bukan zat gizi.",
+            "audio": null
+          }
+        },
+        {
+          "id": "level2_scn005_q02",
+          "questionText": "Dalam kehidupan sehari-hari, kita mengonsumsi berbagai jenis makanan yang mengandung zat gizi berbeda. Perhatikan beberapa makanan berikut: nasi, telur, dan minyak goreng.\nBerdasarkan kandungan zat gizinya, pengelompokan yang tepat adalah….",
+          "questionAudio": null,
+          "choiceLeft": {
+            "text": "Nasi (karbohidrat), telur (protein), minyak (lemak)",
+            "audio": null
+          },
+          "choiceRight": {
+            "text": "Nasi (protein), telur (lemak), minyak (karbohidrat)",
+            "audio": null
+          },
+          "correctAnswer": "left",
+          "feedbackCorrect": {
+            "text": "Tepat! Pengelompokan itu sudah benar.",
+            "audio": null
+          },
+          "feedbackWrong": {
+            "text": "Belum tepat. Nasi sumber karbohidrat, telur protein, minyak lemak.",
+            "audio": null
+          }
+        },
+        {
+          "id": "level2_scn005_q03",
+          "questionText": "Kebiasaan membeli minuman manis, makanan asin, dan gorengan hampir setiap hari karena rasanya enak dan mudah ditemukan. Jika kebiasaan tersebut terus dilakukan dalam waktu lama, dampak yang mungkin terjadi adalah….",
+          "questionAudio": null,
+          "choiceLeft": {
+            "text": "Meningkatnya risiko obesitas, diabetes, dan hipertensi",
+            "audio": null
+          },
+          "choiceRight": {
+            "text": "Meningkatnya kesehatan tubuh karena mendapatkan banyak energi",
+            "audio": null
+          },
+          "correctAnswer": "left",
+          "feedbackCorrect": {
+            "text": "Benar! Kebiasaan itu meningkatkan risiko penyakit tidak menular.",
+            "audio": null
+          },
+          "feedbackWrong": {
+            "text": "Belum tepat. Kebiasaan itu justru meningkatkan risiko penyakit.",
+            "audio": null
+          }
+        },
+        {
+          "id": "level2_scn005_q04",
+          "questionText": "Seorang remaja sering makan makanan cepat saji dan minum minuman manis, tetapi jarang makan buah dan sayur. Kebiasaan ini dapat meningkatkan risiko penyakit karena….",
+          "questionAudio": null,
+          "choiceLeft": {
+            "text": "Tubuh mendapat terlalu banyak kalori dan kurang zat gizi penting bagi tubuh",
+            "audio": null
+          },
+          "choiceRight": {
+            "text": "Tubuh mendapat semua zat gizi yang dibutuhkan",
+            "audio": null
+          },
+          "correctAnswer": "left",
+          "feedbackCorrect": {
+            "text": "Benar! Kalori berlebih tapi zat gizi penting kurang.",
+            "audio": null
+          },
+          "feedbackWrong": {
+            "text": "Belum tepat. Pola makan itu justru kurang zat gizi penting.",
+            "audio": null
+          }
+        },
+        {
+          "id": "level2_scn005_q05",
+          "questionText": "Vara ingin memperbaiki pola makannya setelah mengetahui dampak makanan tinggi gula, garam, dan lemak. Pilihan menu yang lebih baik untuk menjaga kesehatan tubuh adalah….",
+          "questionAudio": null,
+          "choiceLeft": {
+            "text": "Nasi, ikan, sayur, buah, dan air putih",
+            "audio": null
+          },
+          "choiceRight": {
+            "text": "Kentang goreng, ayam goreng, dan minuman bersoda",
+            "audio": null
+          },
+          "correctAnswer": "left",
+          "feedbackCorrect": {
+            "text": "Tepat! Menu itu jauh lebih seimbang.",
+            "audio": null
+          },
+          "feedbackWrong": {
+            "text": "Belum tepat. Menu itu tinggi minyak, garam, dan gula.",
+            "audio": null
+          }
+        }
+      ]
+    },
+    {
+      "id": "level2_scn006",
+      "type": "level_unlock",
+      "background": "level2_scn002",
+      "nextScene": "level3_scn001",
+      "lines": [
+        {
+          "id": "level2_scn006_L01",
+          "speaker": "narrator",
+          "text": "Hebat! Kamu sudah memahami mengapa setiap zat gizi memiliki peran yang berbeda dan saling melengkapi. Sekarang saatnya mencoba menerapkan pengetahuan tersebut dalam kehidupan sehari-hari.",
+          "audio": null,
+          "animation": null
+        }
+      ]
+    }
+  ]
+}

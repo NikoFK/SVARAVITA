@@ -1,0 +1,241 @@
+{
+  "levelId": "level5",
+  "bloomLevel": "C5",
+  "displayTitle": "Level 5 – Evaluasi",
+  "scenes": [
+    {
+      "id": "level5_scn001",
+      "type": "narration",
+      "background": "level5_scn001",
+      "nextScene": "level5_scn002",
+      "lines": [
+        {
+          "id": "level5_scn001_L01",
+          "speaker": "narrator",
+          "text": "Keesokan harinya di kantin sekolah… Vara dihadapkan pada situasi yang tidak mudah.\nDi satu sisi, ia ingin mulai hidup lebih sehat…\nNamun di sisi lain, pilihan makanan di sekitarnya masih sama seperti kemarin… menggoda… praktis… dan disukai banyak teman…",
+          "audio": null,
+          "animation": null
+        }
+      ]
+    },
+    {
+      "id": "level5_scn002",
+      "type": "dialogue",
+      "background": "level5_scn002",
+      "nextScene": "level5_scn003",
+      "lines": [
+        {
+          "id": "level5_scn002_L01",
+          "speaker": "stefany",
+          "text": "Var! Sini ikut kita! Lagi ada promo minuman kopi kekinian sama ayam crispy!",
+          "audio": null,
+          "animation": null
+        },
+        {
+          "id": "level5_scn002_L02",
+          "speaker": "vara",
+          "text": "Wah… kelihatannya enak banget ya…",
+          "audio": null,
+          "animation": null
+        },
+        {
+          "id": "level5_scn002_L03",
+          "speaker": "zea",
+          "text": "Var, sebelum kamu beli… coba pikir dulu. Kalau kamu pilih itu, menurutmu dampaknya ke tubuh kamu gimana?",
+          "audio": null,
+          "animation": null
+        },
+        {
+          "id": "level5_scn002_L04",
+          "speaker": "vara",
+          "text": "Hm… kalau dari yang kemarin kita bahas… itu tinggi gula sama lemak ya…",
+          "audio": null,
+          "animation": null
+        },
+        {
+          "id": "level5_scn002_L05",
+          "speaker": "zea",
+          "text": "Betul. Nah sekarang bukan cuma tahu… tapi kamu harus menilai:\napakah itu pilihan yang tepat untuk kondisi tubuh kamu sekarang?",
+          "audio": null,
+          "animation": null
+        }
+      ]
+    },
+    {
+      "id": "level5_scn003",
+      "type": "dialogue",
+      "background": "level5_scn002",
+      "nextScene": "level5_scn004",
+      "lines": [
+        {
+          "id": "level5_scn003_L01",
+          "speaker": "vara",
+          "text": "Kalau sesekali mungkin nggak apa-apa… tapi kalau sering, bisa berisiko ya…",
+          "audio": null,
+          "animation": null
+        },
+        {
+          "id": "level5_scn003_L02",
+          "speaker": "zea",
+          "text": "Iya. Jadi kamu harus pertimbangkan:\n* Seberapa sering kamu makan itu\n* Apakah sudah seimbang dengan makanan lain\n* Dan apakah ada pilihan yang lebih baik di depanmu",
+          "audio": null,
+          "animation": null
+        },
+        {
+          "id": "level5_scn003_L03",
+          "speaker": "zea",
+          "text": "Coba lihat itu… ada nasi, ayam panggang, sayur, sama air putih.\nMenurutmu, mana yang lebih sesuai kebutuhan tubuh kamu hari ini?",
+          "audio": null,
+          "animation": null
+        },
+        {
+          "id": "level5_scn003_L04",
+          "speaker": "vara",
+          "text": "Kalau dipikir-pikir… yang itu lebih lengkap gizinya…",
+          "audio": null,
+          "animation": null
+        },
+        {
+          "id": "level5_scn003_L05",
+          "speaker": "zea",
+          "text": "Jadi sekarang pertanyaannya bukan ‘enak atau nggak’…\nTapi… ‘mana yang paling tepat untuk tubuh kamu?’",
+          "audio": null,
+          "animation": null
+        },
+        {
+          "id": "level5_scn003_L06",
+          "speaker": "vara",
+          "text": "Iya ya… berarti aku harus pilih berdasarkan kebutuhan tubuh, bukan cuma keinginan.",
+          "audio": null,
+          "animation": null
+        }
+      ]
+    },
+    {
+      "id": "level5_scn004",
+      "type": "narration",
+      "background": "level5_scn002",
+      "nextScene": "level5_scn005",
+      "lines": [
+        {
+          "id": "level5_scn004_L01",
+          "speaker": "narrator",
+          "text": "Sekarang Vara sudah mempertimbangkan berbagai pilihan…\nNamun keputusan akhir tetap ada di tangannya…\nKalau kamu jadi Vara… mana pilihan yang PALING TEPAT berdasarkan hasil evaluasi?",
+          "audio": null,
+          "animation": null
+        }
+      ]
+    },
+    {
+      "id": "level5_scn005",
+      "type": "quiz",
+      "background": "level5_scn002",
+      "nextScene": "level5_scn006",
+      "questions": [
+        {
+          "id": "level5_scn005_q01",
+          "questionText": "Seorang siswa harus memilih menu makan siang yang lebih seimbang. Manakah pilihan yang paling tepat?",
+          "questionAudio": null,
+          "choiceLeft": {
+            "text": "Nasi, ayam, sayur, buah, dan air putih.",
+            "audio": null
+          },
+          "choiceRight": {
+            "text": "Nasi, mi instan, kerupuk, dan minuman manis.",
+            "audio": null
+          },
+          "correctAnswer": "left",
+          "feedbackCorrect": {
+            "text": "Tepat! Menu itu jauh lebih seimbang gizinya.",
+            "audio": null
+          },
+          "feedbackWrong": {
+            "text": "Belum tepat. Menu itu tinggi natrium dan gula, rendah serat.",
+            "audio": null
+          }
+        },
+        {
+          "id": "level5_scn005_q02",
+          "questionText": "Seorang siswa ingin mengganti kebiasaan minum soda setiap hari. Pilihan yang lebih sehat adalah ....",
+          "questionAudio": null,
+          "choiceLeft": {
+            "text": "Air putih atau jus tanpa gula tambahan",
+            "audio": null
+          },
+          "choiceRight": {
+            "text": "Minuman bersoda rendah kalori",
+            "audio": null
+          },
+          "correctAnswer": "left",
+          "feedbackCorrect": {
+            "text": "Benar! Air putih atau jus tanpa gula tambahan lebih sehat.",
+            "audio": null
+          },
+          "feedbackWrong": {
+            "text": "Belum tepat. Soda rendah kalori tetap bukan pilihan tersehat.",
+            "audio": null
+          }
+        },
+        {
+          "id": "level5_scn005_q03",
+          "questionText": "Seorang remaja sering mengonsumsi nugget, sosis, dan mi instan setiap hari. Penilaian yang tepat adalah ....",
+          "questionAudio": null,
+          "choiceLeft": {
+            "text": "Kebiasaan tersebut aman selama masih merasa sehat",
+            "audio": null
+          },
+          "choiceRight": {
+            "text": "Kebiasaan tersebut dapat meningkatkan risiko gangguan kesehatan",
+            "audio": null
+          },
+          "correctAnswer": "right",
+          "feedbackCorrect": {
+            "text": "Benar! Konsumsi rutin makanan ultra proses meningkatkan risiko kesehatan.",
+            "audio": null
+          },
+          "feedbackWrong": {
+            "text": "Belum tepat. Belum ada gejala bukan berarti aman jangka panjang.",
+            "audio": null
+          }
+        },
+        {
+          "id": "level5_scn005_q04",
+          "questionText": "Seorang siswa sering melewatkan sarapan dan lebih banyak makan gorengan. Solusi yang paling tepat adalah ....",
+          "questionAudio": null,
+          "choiceLeft": {
+            "text": "Tetap makan seperti biasa selama tidak sakit",
+            "audio": null
+          },
+          "choiceRight": {
+            "text": "Membiasakan sarapan dan memilih makanan bergizi seimbang",
+            "audio": null
+          },
+          "correctAnswer": "right",
+          "feedbackCorrect": {
+            "text": "Benar! Membiasakan sarapan bergizi seimbang adalah langkah yang tepat.",
+            "audio": null
+          },
+          "feedbackWrong": {
+            "text": "Belum tepat. Menunggu sampai sakit bukan solusi yang baik.",
+            "audio": null
+          }
+        }
+      ]
+    },
+    {
+      "id": "level5_scn006",
+      "type": "ending",
+      "background": "level5_scn006",
+      "nextScene": null,
+      "lines": [
+        {
+          "id": "level5_scn006_L01",
+          "speaker": "narrator",
+          "text": "Terima kasih telah membantu Zea dan Vara menyelesaikan setiap tantangan. Perjalanan ini mungkin telah berakhir, tetapi perjalanan menuju hidup sehat baru saja dimulai. Ingat, setiap pilihan sehat yang kamu lakukan hari ini akan membawa manfaat besar bagi kesehatanmu di masa depan. Jadilah generasi yang cerdas memilih makanan dan bangga hidup sehat.",
+          "audio": null,
+          "animation": null
+        }
+      ]
+    }
+  ]
+}

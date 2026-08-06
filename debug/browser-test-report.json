@@ -1,0 +1,20 @@
+{
+  "lastStage": "Tunggu Quiz tampil",
+  "consoleErrors": [],
+  "networkErrors": [],
+  "jsExceptions": [],
+  "stages": [
+    "Website terbuka",
+    "Loading screen muncul",
+    "Klik loading screen",
+    "Audio \"Ketuk Layar\" diputar",
+    "Opening1 muncul",
+    "Opening2 muncul",
+    "Menunggu Main Menu",
+    "Klik Mulai Baru",
+    "Tutorial tampil",
+    "Masuk Level 1",
+    "Cerita tampil",
+    "Tunggu Quiz tampil"
+  ]
+}
