@@ -5,7 +5,7 @@
  * Data deriven dari file asset, bukan hardcode jumlah slide.
  *
  * Fungsi diekspor:
- *   - showOpeningSlide(slideIndex, imagePath, text)  → tampilkan slide
+ *   - showOpeningSlide(slideIndex, imagePath)  → tampilkan slide
  *   - hideOpening()                                  → sembunyikan overlay opening
  */
 
@@ -15,9 +15,8 @@ const OVERLAY_ID = 'opening-overlay';
  * Menampilkan satu slide opening.
  * @param {number} slideIndex - index slide (1-based)
  * @param {string} imagePath  - path gambar (assets/images/system/opening{n}.webp)
- * @param {string} text       - teks subtitle (mis. dari lines[0])
  */
-export function showOpeningSlide(slideIndex, imagePath, text) {
+export function showOpeningSlide(slideIndex, imagePath) {
   const overlay = document.getElementById(OVERLAY_ID);
   if (!overlay) return;
 
@@ -25,7 +24,6 @@ export function showOpeningSlide(slideIndex, imagePath, text) {
   overlay.innerHTML = `
     <div class="opening-slide">
       <div class="opening-image" style="background-image:url('${imagePath}')"></div>
-      <div class="opening-text">${escapeHtml(text ?? '')}</div>
       <div class="opening-dots">
         <span class="opening-dot active"></span>
       </div>
@@ -44,18 +42,3 @@ export function hideOpening() {
   }
 }
 
-/**
- * Escape HTML entities.
- * @param {string} text
- * @returns {string}
- */
-function escapeHtml(text) {
-  const map = {
-    '&': '&amp;',
-    '<': '<',
-    '>': '>',
-    '"': '"',
-    "'": '&#039;',
-  };
-  return String(text).replace(/[&<>"']/g, (ch) => map[ch]);
-}

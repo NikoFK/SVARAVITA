@@ -159,6 +159,8 @@ body {
   -webkit-backdrop-filter: blur(12px);
   max-height: 22vh;               /* Cukup — tidak dominan */
   overflow-y: auto;
+  cursor: pointer;
+  touch-action: manipulation;
 }
 
 #scene-speaker-name {
@@ -540,7 +542,11 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #000;
+  background-color: #000;
+  background-image: url('/assets/images/system/opening1.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   color: #fff;
   font-size: 1.4rem;
   text-align: center;
@@ -549,7 +555,7 @@ body {
 }
 
 #loading-screen-text {
-  animation: sv-pulse 1.8s ease-in-out infinite;
+  display: none;
 }
 
 @keyframes sv-pulse {

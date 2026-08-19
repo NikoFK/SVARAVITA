@@ -67,6 +67,7 @@ export const EVENTS = Object.freeze({
     READ_INTENT: 'gesture:readIntent',
     READ_LEFT_INTENT: 'gesture:readLeftIntent',
     READ_RIGHT_INTENT: 'gesture:readRightIntent',
+    READ_QUESTION_INTENT: 'gesture:readQuestionIntent',
     SELECT_LEFT_INTENT: 'gesture:selectLeftIntent',
     SELECT_RIGHT_INTENT: 'gesture:selectRightIntent',
   }),

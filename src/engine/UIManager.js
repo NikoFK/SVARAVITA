@@ -13,12 +13,17 @@
 
 import { EVENTS, SPEAKER, SCENE_TYPE } from '../constants/index.js';
 import { Logger } from '../utils/Logger.js';
-import { resolveSceneImagePath, resolveMenuImagePath, resolveWinGameAudioPath } from '../utils/pathResolver.js';
+import {
+  resolveSceneAudioPath,
+  resolveSceneImagePath,
+  resolveMenuImagePath,
+  resolveWinGameAudioPath,
+} from '../utils/pathResolver.js';
 import { renderBackground } from '../components/BackgroundView.js';
 import { renderSubtitle, clearSubtitle, hideSubtitleBox, showSubtitleBox } from '../components/SubtitleView.js';
 import { renderChoices, clearChoices } from '../components/ChoiceView.js';
 import { renderQuizQuestion } from '../components/QuizView.js';
-import { renderHud, renderProgressInfo, clearProgressInfo } from '../components/HUD.js';
+import { renderHud, renderProgressInfo, clearProgressInfo, hideHud, showHud } from '../components/HUD.js';
 import { renderEnding, hideEnding } from '../components/EndingView.js';
 import { showLoading, hideLoading } from '../components/LoadingScreen.js';
 import { speak, stopSpeaking } from '../utils/tts.js';
@@ -44,6 +49,8 @@ export class UIManager {
     this._currentLevelId = null;
     this._currentQuestionIndex = 0;
     this._currentTotalQuestions = 0;
+    this._endingAudioTrackId = null;
+    this._onEndingAudioComplete = null;
 
     this._eventBus.subscribe(EVENTS.SCENE.ENTERED, (p) => this._onSceneEntered(p));
     this._eventBus.subscribe(EVENTS.SCENE.EXITED, () => {
@@ -58,6 +65,8 @@ export class UIManager {
     this._eventBus.subscribe(EVENTS.PROGRESS.VITA_POINT_CHANGED, (p) => renderHud(p));
     this._eventBus.subscribe(EVENTS.QUIZ.QUESTION_STARTED, (p) => this._onQuestionStarted(p));
     this._eventBus.subscribe(EVENTS.QUIZ.COMPLETED, (p) => this._onQuizCompleted(p));
+    this._eventBus.subscribe(EVENTS.AUDIO.PLAYBACK_COMPLETE, (p) => this._onEndingAudioSettled(p));
+    this._eventBus.subscribe(EVENTS.AUDIO.PLAYBACK_FAILED, (p) => this._onEndingAudioSettled(p));
   }
 
   /** Mengosongkan seluruh tampilan Scene (dipanggil saat scene:exited). */
@@ -65,6 +74,8 @@ export class UIManager {
     clearSubtitle();
     clearChoices();
     clearProgressInfo();
+      this._endingAudioTrackId = null;
+      this._onEndingAudioComplete = null;
   }
 
 /**
@@ -126,6 +137,7 @@ export class UIManager {
 
     if (sceneType === SCENE_TYPE.MENU) {
       console.log('[DEBUG] UIManager._onSceneEntered -> MERENDER MENU (Mulai Baru/Lanjutkan)');
+      hideHud();
       // Background Menu Utama = gambar "tombol play.webp" fullscreen.
       // Hanya di-set di scene MENU; scene lain memakai background masing-masing
       // (renderScene untuk cerita, renderQuestion untuk quiz, dst.).
@@ -141,7 +153,20 @@ export class UIManager {
     }
 
     if (sceneType === SCENE_TYPE.ENDING) {
-      this._renderEndingScreen();
+      if (levelId === 'level5') {
+        this._playEndingAudio(
+          resolveSceneAudioPath(levelId, scene.id),
+          'level5_ending_narrator',
+          () => this._renderEndingScreen(levelId)
+        );
+      } else {
+        this._renderEndingScreen(levelId);
+      }
+    }
+
+    if (sceneType !== SCENE_TYPE.MENU) {
+      showHud();
+      renderHud({ total: this._progressManager.getVitaPoint() });
     }
 
     Logger.debug('UIManager', `Scene "${sceneType}" masuk — menunggu konten dari DialogueManager/QuizManager.`);
@@ -158,7 +183,7 @@ export class UIManager {
    * lalu membacakan hasilnya via TTS.
    * @private
    */
-  _renderEndingScreen() {
+  _renderEndingScreen(levelId) {
     const totalVitaPoint = this._progressManager.getVitaPoint();
     const totalStars = this._progressManager.getTotalEarnedStars();
     renderEnding({ totalStars, totalVitaPoint });
@@ -167,16 +192,17 @@ export class UIManager {
     const message =
       `Permainan selesai. Kamu mendapatkan ${totalVitaPoint} Vita Point. ` +
       `Dan memperoleh ${totalStars} bintang.`;
-    speak(message);
-
-    // BACKSOUND KEMENANGAN: win_game.mp3 diputar SETELAH Result Screen
-    // (bintang + Vita Point) sempat tampil. Jeda ~800ms agar pengguna
-    // melihat hasilnya dulu, lalu audio diputar SEBAGAI VOICE (sekali) —
-    // pemain tetap berada di halaman hasil sampai audio selesai (scene
-    // ending tidak auto-advance; transisi hanya lewat ketukan pengguna).
-    setTimeout(() => {
-      this._audioManager.playVoice(resolveWinGameAudioPath(), 'win_game');
-    }, 800);
+    speak(message, () => {
+      this._playEndingAudio(resolveWinGameAudioPath(), 'win_game', () => {
+        if (levelId === 'level5') {
+          this._playEndingAudio(
+            resolveSceneAudioPath(levelId, 'level5_scn014'),
+            'level5_closing',
+            () => {}
+          );
+        }
+      });
+    });
 
     // Ketuk pada overlay ending → kembali ke menu utama.
     const overlay = document.getElementById('ending-overlay');
@@ -187,6 +213,22 @@ export class UIManager {
         this._sceneManager.loadScene('system', 'menu');
       };
     }
+  }
+
+  /** @private */
+  _playEndingAudio(path, trackId, onComplete) {
+    this._endingAudioTrackId = trackId;
+    this._onEndingAudioComplete = onComplete;
+    this._audioManager.playVoice(path, trackId);
+  }
+
+  /** @private */
+  _onEndingAudioSettled({ trackId, channel }) {
+    if (channel !== 'voice' || trackId !== this._endingAudioTrackId) return;
+    const callback = this._onEndingAudioComplete;
+    this._endingAudioTrackId = null;
+    this._onEndingAudioComplete = null;
+    if (callback) callback();
   }
 
   /** @private Handler untuk quiz:questionStarted */

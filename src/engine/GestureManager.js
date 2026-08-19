@@ -31,15 +31,38 @@ export class GestureManager {
 
     const surface = surfaceEl ?? (typeof document !== 'undefined' ? document.body : null);
     if (surface) {
-      // SATU listener saja untuk menghindari double-fire. Semua klik
-      // (tombol A/B visual maupun area bebas) diperlakukan sebagai ketukan
-      // generik yang sama: single-tap = preview, double-tap cepat pada sisi
-      // yang sama = konfirmasi pilihan (ditangani QuizManager via intent).
-      // Tombol #choice-left/#choice-right TIDAK lagi memicu SELECT langsung
-      // — konsisten dengan interaksi tunanetra (tap1 preview, tap2 pilih).
+      // SATU listener saja untuk menghindari double-fire. Area soal punya
+      // routing sendiri agar single tap di area soal hanya replay soal,
+      // tanpa memicu A/B dan tanpa dianggap pilih jawaban.
       surface.addEventListener('click', (event) => {
+        const questionArea = event.target && event.target.closest
+          ? event.target.closest('#scene-subtitle-box')
+          : null;
+
+        if (questionArea) {
+          event.stopPropagation();
+          this._handleQuestionTap();
+          return;
+        }
+
         this._handleTap(event.clientX);
       });
+    }
+  }
+
+  /** @private */
+  _handleQuestionTap() {
+    const now = Date.now();
+    const isDoubleTap = now - this._lastTapTime <= DOUBLE_TAP_MAX_INTERVAL_MS;
+    this._lastTapTime = now;
+
+    // Single tap area soal = replay audio soal saja; double tap area soal
+    // juga tidak dianggap sebagai jawaban A/B. Jika diimplementasikan sebagai
+    // replay soal, tetap aman: replay tidak memengaruhi scoring atau state.
+    this._eventBus.emit(EVENTS.GESTURE.READ_QUESTION_INTENT, { isDoubleTap });
+
+    if (isDoubleTap) {
+      this._lastTapTime = 0;
     }
   }
 

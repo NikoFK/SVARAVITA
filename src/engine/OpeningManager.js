@@ -4,20 +4,20 @@
  * Menjalankan sequence Opening (slideshow sambutan) dengan auto-discovery
  * jumlah slide dari file asset:
  *   - images/system/opening{index}.webp
- *   - audio/system/opening_audio_{index}.mp3 (opsional, jika ada)
+ *   - audio/system/{narasi opening 4-6}.mp3 (opsional, sesuai slide)
  *
  * Berhenti ketika slide berikutnya tidak ada. Setelah selesai, pindah ke
  * Menu (scene "menu" di level system).
  *
- * [PROVISIONAL] Audio per slide opening belum tentu ada di folder system —
- * hanya ada "Ketuk Layar.mp3", "Lanjut atau baru.mp3", dst. Untuk slide
- * opening, audio dibaca dari lines[0] scene opening di system.json (fallback
- * ke estimasi durasi baca jika tidak ada audio spesifik).
  */
 
 import { EVENTS } from '../constants/index.js';
 import { Logger } from '../utils/Logger.js';
-import { resolveLoadingScreenAudioPath, resolveOpeningImagePath } from '../utils/pathResolver.js';
+import {
+  resolveLoadingScreenAudioPath,
+  resolveOpeningAudioPath,
+  resolveOpeningImagePath,
+} from '../utils/pathResolver.js';
 import { assetExists } from '../utils/assetExists.js';
 import { showOpeningSlide, hideOpening } from '../components/OpeningView.js';
 
@@ -41,6 +41,11 @@ export class OpeningManager {
     this._slide = 0;
     this._isRunning = false;
     this._completeCallback = null;
+    this._awaitedTrackId = null;
+    this._onAudioComplete = null;
+
+    this._eventBus.subscribe(EVENTS.AUDIO.PLAYBACK_COMPLETE, (payload) => this._onOpeningAudioSettled(payload));
+    this._eventBus.subscribe(EVENTS.AUDIO.PLAYBACK_FAILED, (payload) => this._onOpeningAudioSettled(payload));
   }
 
   /**
@@ -61,12 +66,8 @@ export class OpeningManager {
       return;
     }
 
-    // BACKSOUND: mulai loading_screen.mp3 (loop) tepat saat slide pertama
-    // opening muncul. Diputar SATU KALI sepanjang slideshow, tidak direstart
-    // saat pindah slide (lihat _showSlide). Dihentikan di _finish().
-    this._audioManager.playBgm(resolveLoadingScreenAudioPath(), 'loading_screen');
-
-    this._showSlide(1);
+    // opening1 sudah tampil sebagai tap-to-start gate di main.js.
+    this._showSlide(2);
   }
 
   /** @private */
@@ -74,11 +75,20 @@ export class OpeningManager {
     console.log(`[DEBUG] OpeningManager._showSlide(${slide})`);
     this._slide = slide;
     const imagePath = resolveOpeningImagePath(slide);
-    const text = this._textForSlide(slide);
+    showOpeningSlide(slide, imagePath);
 
-    showOpeningSlide(slide, imagePath, text);
+    if (slide === 2) {
+      this._audioManager.playBgm(resolveLoadingScreenAudioPath(), 'loading_screen');
+    }
+
+    const audioPath = resolveOpeningAudioPath(slide);
+    if (audioPath) {
+      this._playSlideAudio(audioPath, `opening_${slide}`);
+      return;
+    }
 
     // Durasi per slide (estimasi dari teks)
+    const text = this._textForSlide(slide);
     const duration = Math.max(2500, (text?.length ?? 0) * 45);
     console.log(`[DEBUG] OpeningManager._showSlide(${slide}) -> durasi ${duration}ms`);
     setTimeout(() => {
@@ -93,6 +103,9 @@ export class OpeningManager {
     const exists = await this._slideExists(next);
     console.log(`[DEBUG] OpeningManager._advance() -> slide ${next} exists: ${exists}`);
     if (exists) {
+      if (next === 4) {
+        this._audioManager.stopBgm();
+      }
       this._showSlide(next);
     } else {
       this._finish();
@@ -104,8 +117,8 @@ export class OpeningManager {
     console.log('[DEBUG] OpeningManager._finish() DIPANGGIL — callback akan dipanggil');
     this._isRunning = false;
     hideOpening();
-    // BACKSOUND: hentikan loading_screen.mp3 saat opening selesai (masuk Menu).
-    this._audioManager.stopBgm();
+    this._awaitedTrackId = null;
+    this._onAudioComplete = null;
     const cb = this._completeCallback;
     this._completeCallback = null;
     if (cb) {
@@ -114,6 +127,24 @@ export class OpeningManager {
     } else {
       console.log('[DEBUG] OpeningManager._finish() -> TIDAK ADA completeCallback!');
     }
+  }
+
+  /** @private */
+  _playSlideAudio(path, trackId) {
+    this._awaitedTrackId = trackId;
+    this._onAudioComplete = () => {
+      this._awaitedTrackId = null;
+      this._onAudioComplete = null;
+      if (this._isRunning) this._advance();
+    };
+    this._audioManager.playVoice(path, trackId);
+  }
+
+  /** @private */
+  _onOpeningAudioSettled({ trackId, channel }) {
+    if (channel !== 'voice' || trackId !== this._awaitedTrackId) return;
+    const callback = this._onAudioComplete;
+    if (callback) callback();
   }
 
   /** @private */

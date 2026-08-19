@@ -75,7 +75,7 @@ export class SceneManager {
       if (this._currentScene?.type === SCENE_TYPE.MENU) return;
       this.goToNextScene();
     });
-    this._eventBus.subscribe(EVENTS.QUIZ.COMPLETED, () => this.goToNextScene());
+    this._eventBus.subscribe(EVENTS.QUIZ.COMPLETED, (payload) => this._onQuizCompleted(payload));
   }
 
   /** @returns {object|null} data Scene aktif saat ini */
@@ -192,8 +192,9 @@ async goToNextScene() {
       const currentSeq = this._extractSceneSeq(this._currentSceneId);
       if (currentSeq !== null) {
         const nextSeq = currentSeq + 1;
+        const shouldStopBeforeLevel5Quiz = this._currentLevelId === 'level5' && currentSeq >= 4;
         const nextAssetSceneId = scnId(this._currentLevelId, nextSeq);
-        if (await hasStoryScene(this._currentLevelId, nextSeq)) {
+        if (!shouldStopBeforeLevel5Quiz && await hasStoryScene(this._currentLevelId, nextSeq)) {
           Logger.info(
             'SceneManager',
             `Story "${this._currentSceneId}" selesai → lanjut ke scene cerita asset "${nextAssetSceneId}" (masih ada story).`
@@ -228,6 +229,24 @@ async goToNextScene() {
     const targetLevelId = this._deriveLevelIdFromSceneId(nextSceneId) ?? this._currentLevelId;
 
     return this.loadScene(targetLevelId, nextSceneId);
+  }
+
+  /** @private */
+  _onQuizCompleted({ sceneId }) {
+    const levelId = this._deriveLevelIdFromSceneId(sceneId);
+    const nextSceneByLevel = {
+      level1: ['level2', 'level2_scn001'],
+      level2: ['level2', 'level2_scn006'],
+      level3: ['level4', 'level4_scn001'],
+      level4: ['level5', 'level5_scn001'],
+    };
+    const target = nextSceneByLevel[levelId];
+    if (target) {
+      this.loadScene(target[0], target[1]);
+      return;
+    }
+
+    this.goToNextScene();
   }
 
   /**

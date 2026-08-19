@@ -72,6 +72,7 @@ export class QuizManager {
     this._eventBus.subscribe(EVENTS.CHOICE.SELECTED, (p) => this._onChoiceSelected(p));
     this._eventBus.subscribe(EVENTS.CHOICE.READ_LEFT, () => this._onReadChoice(CHOICE_SIDE.LEFT));
     this._eventBus.subscribe(EVENTS.CHOICE.READ_RIGHT, () => this._onReadChoice(CHOICE_SIDE.RIGHT));
+    this._eventBus.subscribe(EVENTS.GESTURE.READ_QUESTION_INTENT, () => this._onReadQuestion());
     this._eventBus.subscribe(EVENTS.AUDIO.PLAYBACK_COMPLETE, (p) => this._onAudioSettled(p));
     this._eventBus.subscribe(EVENTS.AUDIO.PLAYBACK_FAILED, (p) => this._onAudioSettled(p));
   }
@@ -168,6 +169,19 @@ export class QuizManager {
     const path = this._questionAudioPath(question, type);
     if (path) {
       this._audioManager.playVoice(path, `${question.id}_read_${type}`);
+    }
+  }
+
+  /** @private */
+  _onReadQuestion() {
+    if (this._locked || !this._acceptingInput || !this._questions) return;
+
+    const question = this._questions[this._index];
+    if (!question) return;
+
+    const path = this._questionAudioPath(question, 'soal');
+    if (path) {
+      this._audioManager.playVoice(path, `${question.id}_replay_soal`);
     }
   }
 

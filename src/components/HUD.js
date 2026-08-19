@@ -82,6 +82,22 @@ export function clearProgressInfo() {
   if (el) el.innerHTML = '';
 }
 
+/** Hide the gameplay HUD while the main menu is active. */
+export function hideHud() {
+  const progressEl = document.getElementById('progress-info');
+  const hudEl = document.getElementById('hud');
+  if (progressEl) progressEl.style.display = 'none';
+  if (hudEl) hudEl.style.display = 'none';
+}
+
+/** Show the gameplay HUD when entering a level scene. */
+export function showHud() {
+  const progressEl = document.getElementById('progress-info');
+  const hudEl = document.getElementById('hud');
+  if (progressEl) progressEl.style.display = '';
+  if (hudEl) hudEl.style.display = '';
+}
+
 // ---------------------------------------------------------------------------
 // SVG BINTANG — open source, scalable
 // ---------------------------------------------------------------------------

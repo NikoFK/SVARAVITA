@@ -29,6 +29,9 @@ const ASSET_ROOT = 'assets';
 /** Nama-nama file khusus di folder system (tidak boleh diubah). */
 const SYSTEM_AUDIO_FILES = Object.freeze({
   KETUK_LAYAR: 'Ketuk Layar.mp3',
+  MATIKAN_TALKBACK: 'Matikan talkback.mp3',
+  SELAMAT_DATANG: 'Selamat datang.mp3',
+  PENGENALAN_VARA_ZEA: 'Pengenalan Vara dan Zea.mp3',
   LANJUT_ATAU_BARU: 'Lanjut atau baru.mp3',
   LANJUTKAN: 'lanjutkan.mp3',
   MULAI_BARU: 'mulai baru.mp3',
@@ -86,6 +89,17 @@ export function resolveMenuImagePath() {
  */
 export function resolveKetukLayarAudioPath() {
   return `${ASSET_ROOT}/audio/system/${SYSTEM_AUDIO_FILES.KETUK_LAYAR}`;
+}
+
+/** Path audio narasi slide opening 4-6. */
+export function resolveOpeningAudioPath(index) {
+  const files = {
+    4: SYSTEM_AUDIO_FILES.MATIKAN_TALKBACK,
+    5: SYSTEM_AUDIO_FILES.SELAMAT_DATANG,
+    6: SYSTEM_AUDIO_FILES.PENGENALAN_VARA_ZEA,
+  };
+  const filename = files[index];
+  return filename ? `${ASSET_ROOT}/audio/system/${filename}` : null;
 }
 
 /**
