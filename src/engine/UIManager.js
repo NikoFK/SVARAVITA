@@ -184,6 +184,7 @@ export class UIManager {
       `Dan memperoleh ${totalStars} bintang.`;
     if (levelId === 'level5') {
       speak(message, () => {
+        stopSpeaking();
         this._playEndingAudio(
           resolveSceneAudioPath(levelId, 'level5_scn014'),
           'level5_closing',
