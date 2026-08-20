@@ -32,6 +32,18 @@ import { resolveSceneAudioPath } from '../utils/pathResolver.js';
  * levelId tujuan saat goToNextScene() berpindah lintas-level. */
 const SCENE_ID_PATTERN = /^(.+)_scn(\d+)$/;
 
+const STORY_ROUTING = Object.freeze({
+  level1: Object.freeze({ storyEnd: 22, nextLevelScene: 'level2_scn001' }),
+  level2: Object.freeze({
+    storyEnd: 19,
+    postQuizScene: 'level2_scn020',
+    postQuizNextScene: 'level3_scn001',
+  }),
+  level3: Object.freeze({ storyEnd: 22, nextLevelScene: 'level4_scn001' }),
+  level4: Object.freeze({ storyEnd: 21, nextLevelScene: 'level5_scn001' }),
+  level5: Object.freeze({ storyEnd: 13 }),
+});
+
 export class SceneManager {
   /**
    * @param {import('./EventBus.js').EventBus} eventBus
@@ -190,20 +202,11 @@ async goToNextScene() {
 
     if (isStoryScene && this._currentLevelId) {
       const currentSeq = this._extractSceneSeq(this._currentSceneId);
-      if (currentSeq !== null) {
+      const routing = STORY_ROUTING[this._currentLevelId];
+      if (currentSeq !== null && routing) {
         const nextSeq = currentSeq + 1;
         const nextAssetSceneId = scnId(this._currentLevelId, nextSeq);
-        const isLevel1Or2 = this._currentLevelId === 'level1' || this._currentLevelId === 'level2';
-        const isLevel5PostStory = this._currentLevelId === 'level5' && currentSeq >= 4 && currentSeq < 12;
-        const isLevel5StoryComplete = this._currentLevelId === 'level5' && currentSeq === 12;
-        const nextSceneIsDefined = this._isSceneDefined(this._currentLevelId, nextAssetSceneId);
-        const shouldContinueStory = isLevel1Or2 || isLevel5PostStory || !nextSceneIsDefined;
-
-        if (isLevel5StoryComplete) {
-          return this.loadScene('level5', 'level5_scn005');
-        }
-
-        if (shouldContinueStory && await hasStoryScene(this._currentLevelId, nextSeq)) {
+        if (currentSeq < routing.storyEnd && await hasStoryScene(this._currentLevelId, nextSeq)) {
           Logger.info(
             'SceneManager',
             `Story "${this._currentSceneId}" selesai → lanjut ke scene cerita asset "${nextAssetSceneId}" (masih ada story).`
@@ -219,11 +222,10 @@ async goToNextScene() {
       }
     }
 
-    if (isStoryScene && (this._currentLevelId === 'level1' || this._currentLevelId === 'level2')) {
+    if (isStoryScene && STORY_ROUTING[this._currentLevelId] &&
+      this._currentSceneId !== STORY_ROUTING[this._currentLevelId].postQuizScene) {
       const quizSceneId = this._findQuizSceneId(this._currentLevelId);
-      if (quizSceneId) {
-        return this.loadScene(this._currentLevelId, quizSceneId);
-      }
+      if (quizSceneId) return this.loadScene(this._currentLevelId, quizSceneId);
     }
 
     const nextSceneId = this._currentScene.nextScene;
@@ -250,25 +252,18 @@ async goToNextScene() {
   /** @private */
   _onQuizCompleted({ sceneId }) {
     const levelId = this._deriveLevelIdFromSceneId(sceneId);
-    const nextSceneByLevel = {
-      level1: ['level2', 'level2_scn001'],
-      level2: ['level3', 'level3_scn001'],
-      level3: ['level4', 'level4_scn001'],
-      level4: ['level5', 'level5_scn001'],
-    };
-    const target = nextSceneByLevel[levelId];
-    if (target) {
-      this.loadScene(target[0], target[1]);
+    const routing = STORY_ROUTING[levelId];
+    if (routing?.postQuizScene) {
+      this.loadScene(levelId, routing.postQuizScene);
+      return;
+    }
+    if (routing?.nextLevelScene) {
+      const nextLevelId = this._deriveLevelIdFromSceneId(routing.nextLevelScene);
+      this.loadScene(nextLevelId, routing.nextLevelScene);
       return;
     }
 
     this.goToNextScene();
-  }
-
-  /** @private */
-  _isSceneDefined(levelId, sceneId) {
-    const levelData = this._dataManager.getCachedLevelData(levelId);
-    return Boolean(levelData?.scenes?.some((scene) => scene?.id === sceneId));
   }
 
   /**
@@ -369,12 +364,9 @@ if (!sceneData && sceneId && levelId) {
 
   /** @private */
   _syntheticNextScene(levelId, seq) {
-    if (levelId === 'level5' && seq >= 5 && seq < 12) {
-      return scnId(levelId, seq + 1);
-    }
-    if (levelId === 'level5' && seq === 12) {
-      return 'level5_scn005';
-    }
+    const routing = STORY_ROUTING[levelId];
+    if (routing?.postQuizScene === scnId(levelId, seq)) return routing.postQuizNextScene;
+    if (routing && seq < routing.storyEnd) return scnId(levelId, seq + 1);
     return this._findQuizSceneId(levelId);
   }
 
