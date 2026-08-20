@@ -193,11 +193,11 @@ async goToNextScene() {
       if (currentSeq !== null) {
         const nextSeq = currentSeq + 1;
         const nextAssetSceneId = scnId(this._currentLevelId, nextSeq);
-        const isLevel2PostQuizStory = this._currentLevelId === 'level2' && currentSeq >= 6 && currentSeq < 20;
+        const isLevel1Or2 = this._currentLevelId === 'level1' || this._currentLevelId === 'level2';
         const isLevel5PostStory = this._currentLevelId === 'level5' && currentSeq >= 4 && currentSeq < 12;
         const isLevel5StoryComplete = this._currentLevelId === 'level5' && currentSeq === 12;
         const nextSceneIsDefined = this._isSceneDefined(this._currentLevelId, nextAssetSceneId);
-        const shouldContinueStory = isLevel2PostQuizStory || isLevel5PostStory || !nextSceneIsDefined;
+        const shouldContinueStory = isLevel1Or2 || isLevel5PostStory || !nextSceneIsDefined;
 
         if (isLevel5StoryComplete) {
           return this.loadScene('level5', 'level5_scn005');
@@ -219,10 +219,14 @@ async goToNextScene() {
       }
     }
 
-    const nextSceneId = this._currentScene.nextScene;
-    if (this._currentLevelId === 'level2' && this._currentSceneId === 'level2_scn006') {
-      return this.loadScene('level2', 'level2_scn007');
+    if (isStoryScene && (this._currentLevelId === 'level1' || this._currentLevelId === 'level2')) {
+      const quizSceneId = this._findQuizSceneId(this._currentLevelId);
+      if (quizSceneId) {
+        return this.loadScene(this._currentLevelId, quizSceneId);
+      }
     }
+
+    const nextSceneId = this._currentScene.nextScene;
     if (nextSceneId === null) {
       Logger.info(
         'SceneManager',
@@ -248,7 +252,7 @@ async goToNextScene() {
     const levelId = this._deriveLevelIdFromSceneId(sceneId);
     const nextSceneByLevel = {
       level1: ['level2', 'level2_scn001'],
-      level2: ['level2', 'level2_scn006'],
+      level2: ['level3', 'level3_scn001'],
       level3: ['level4', 'level4_scn001'],
       level4: ['level5', 'level5_scn001'],
     };
@@ -365,9 +369,6 @@ if (!sceneData && sceneId && levelId) {
 
   /** @private */
   _syntheticNextScene(levelId, seq) {
-    if (levelId === 'level2' && seq >= 7) {
-      return seq >= 20 ? 'level3_scn001' : scnId(levelId, seq + 1);
-    }
     if (levelId === 'level5' && seq >= 5 && seq < 12) {
       return scnId(levelId, seq + 1);
     }
