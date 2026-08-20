@@ -192,9 +192,18 @@ async goToNextScene() {
       const currentSeq = this._extractSceneSeq(this._currentSceneId);
       if (currentSeq !== null) {
         const nextSeq = currentSeq + 1;
-        const shouldStopBeforeLevel5Quiz = this._currentLevelId === 'level5' && currentSeq >= 4;
         const nextAssetSceneId = scnId(this._currentLevelId, nextSeq);
-        if (!shouldStopBeforeLevel5Quiz && await hasStoryScene(this._currentLevelId, nextSeq)) {
+        const isLevel2PostQuizStory = this._currentLevelId === 'level2' && currentSeq >= 6 && currentSeq < 20;
+        const isLevel5PostStory = this._currentLevelId === 'level5' && currentSeq >= 4 && currentSeq < 12;
+        const isLevel5StoryComplete = this._currentLevelId === 'level5' && currentSeq === 12;
+        const nextSceneIsDefined = this._isSceneDefined(this._currentLevelId, nextAssetSceneId);
+        const shouldContinueStory = isLevel2PostQuizStory || isLevel5PostStory || !nextSceneIsDefined;
+
+        if (isLevel5StoryComplete) {
+          return this.loadScene('level5', 'level5_scn005');
+        }
+
+        if (shouldContinueStory && await hasStoryScene(this._currentLevelId, nextSeq)) {
           Logger.info(
             'SceneManager',
             `Story "${this._currentSceneId}" selesai → lanjut ke scene cerita asset "${nextAssetSceneId}" (masih ada story).`
@@ -211,6 +220,9 @@ async goToNextScene() {
     }
 
     const nextSceneId = this._currentScene.nextScene;
+    if (this._currentLevelId === 'level2' && this._currentSceneId === 'level2_scn006') {
+      return this.loadScene('level2', 'level2_scn007');
+    }
     if (nextSceneId === null) {
       Logger.info(
         'SceneManager',
@@ -247,6 +259,12 @@ async goToNextScene() {
     }
 
     this.goToNextScene();
+  }
+
+  /** @private */
+  _isSceneDefined(levelId, sceneId) {
+    const levelData = this._dataManager.getCachedLevelData(levelId);
+    return Boolean(levelData?.scenes?.some((scene) => scene?.id === sceneId));
   }
 
   /**
@@ -332,7 +350,7 @@ if (!sceneData && sceneId && levelId) {
       id: sceneId,
       type: SCENE_TYPE.NARRATION,
       background: sceneId,
-      nextScene: this._findQuizSceneId(levelId),
+      nextScene: this._syntheticNextScene(levelId, seq),
       lines: [
         {
           id: `${sceneId}_L01`,
@@ -343,6 +361,20 @@ if (!sceneData && sceneId && levelId) {
         },
       ],
     };
+  }
+
+  /** @private */
+  _syntheticNextScene(levelId, seq) {
+    if (levelId === 'level2' && seq >= 7) {
+      return seq >= 20 ? 'level3_scn001' : scnId(levelId, seq + 1);
+    }
+    if (levelId === 'level5' && seq >= 5 && seq < 12) {
+      return scnId(levelId, seq + 1);
+    }
+    if (levelId === 'level5' && seq === 12) {
+      return 'level5_scn005';
+    }
+    return this._findQuizSceneId(levelId);
   }
 
   /**

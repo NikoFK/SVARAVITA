@@ -152,17 +152,7 @@ export class UIManager {
       );
     }
 
-    if (sceneType === SCENE_TYPE.ENDING) {
-      if (levelId === 'level5') {
-        this._playEndingAudio(
-          resolveSceneAudioPath(levelId, scene.id),
-          'level5_ending_narrator',
-          () => this._renderEndingScreen(levelId)
-        );
-      } else {
-        this._renderEndingScreen(levelId);
-      }
-    }
+    if (sceneType === SCENE_TYPE.ENDING) this._renderEndingScreen(levelId);
 
     if (sceneType !== SCENE_TYPE.MENU) {
       showHud();
@@ -192,17 +182,22 @@ export class UIManager {
     const message =
       `Permainan selesai. Kamu mendapatkan ${totalVitaPoint} Vita Point. ` +
       `Dan memperoleh ${totalStars} bintang.`;
-    speak(message, () => {
-      this._playEndingAudio(resolveWinGameAudioPath(), 'win_game', () => {
-        if (levelId === 'level5') {
-          this._playEndingAudio(
-            resolveSceneAudioPath(levelId, 'level5_scn014'),
-            'level5_closing',
-            () => {}
-          );
-        }
+    if (levelId === 'level5') {
+      speak(message, () => {
+        this._playEndingAudio(
+          resolveSceneAudioPath(levelId, 'level5_scn014'),
+          'level5_closing',
+          () => {}
+        );
       });
-    });
+    } else {
+      speak(message);
+
+      // BACKSOUND KEMENANGAN: pertahankan behavior ending level lain.
+      setTimeout(() => {
+        this._audioManager.playVoice(resolveWinGameAudioPath(), 'win_game');
+      }, 800);
+    }
 
     // Ketuk pada overlay ending → kembali ke menu utama.
     const overlay = document.getElementById('ending-overlay');
